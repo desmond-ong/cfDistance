@@ -1,0 +1,419 @@
+<!-- Sets up templates for the actual "slides" and forms that are 
+supposed to be shown at each stage of the experiment. -->
+
+<html>
+<head>
+  <title>Start page</title>
+<script src="https://www.stanford.edu/~dco/common/jquery.min.js"></script>
+<script src="https://www.stanford.edu/~dco/common/mmturkey.0.5.js?nowarn"></script>
+<style type="text/css">
+.slide, #instructions, #wheel {
+    min-width: 600px;
+}    
+</style>
+<link rel="stylesheet" href="https://www.stanford.edu/~dco/common/style.css" />
+</head>
+<body>
+<div class="progress" id="progressBar">
+	<div class="bar-wrapper">
+	  <div class="bar"></div>
+	</div>
+	<p>Progress bar: <span id="trial-num">{{}}</span><span>/</span><span id="total-num">{{}}</span></p>
+</div>
+
+<div class="slide" id="instructions">
+  <img src="https://www.stanford.edu/~dco/common/images/stanford.png" alt="Stanford University">
+    <p id='logo-text'>Stanford Computation and Cognition Lab</p>
+  <p class="block-text">
+  In this experiment, we are interested in how
+  people read stories and make judgments about emotions.
+  </p>
+  <button type="button" onclick="this.blur(); experiment.description()">Start</button>
+    <p class="block-text" id="legal">Legal information: By answering the
+    following questions, you are participating in a study being performed by
+    cognitive scientists in the Stanford Department of Psychology. If you have
+    questions about this research, please contact <b>Desmond Ong</b> at <a
+    href="mailto://desmond.ong@stanford.edu">desmond.ong@stanford.edu</a> or Noah
+    Goodman, at ngoodman@stanford.edu. You must be  at least 18 years old to
+    participate. Your participation in this research is voluntary. You may
+    decline to answer any or all of the following questions. You may decline
+    further participation, at any time, without adverse consequences. Your
+    anonymity is assured; the researchers who have requested your
+    participation will not receive any personal information about you.
+    </p>
+</div>
+
+<script LANGUAGE="JavaScript">
+<!--
+function ValidateForm(form){
+    var valid = 0;
+    for(var i = 0; i < form.elements.length; i++) {
+        if (form.elements[i].checked == true ) { 
+            valid = 1; 
+            return true;
+        } 
+    } 
+    if (valid == 0) {
+        alert ( "Please answer this question." );
+        return false; 
+    }
+}
+
+function ValidateCorrect(form){
+    if (form.elements[0].checked == true ) { 
+        return true;
+    } 
+	alert ( "Please make sure you understood the question correctly!" );
+    return false; 
+}
+
+function ValidateCausal(form) {
+	var valid = false;
+	var checkedRadioIndex = -1;
+	var checkedTextIndex = -1;
+    for(var i = 0; i < form.elements.length - 1; i++) {
+        if (form.elements[i].checked == true && form.elements[i+1].value != "") { 
+        	valid = true;
+        	checkedRadioIndex = i;
+        	checkedTextIndex = i+1;
+    	}
+    }
+    
+    if (!valid) {
+    	alert ( "Please select an option and fill in the blank with the appropriate response. Please fill in only the textbox of the option you selected." );
+   	}
+   	return valid; 
+}
+
+function ValidateSelect(form) {
+    if (form.ageRange.selectedIndex != 0 && form.ageRange.selectedIndex != 1 && form.ageRange.selectedIndex != 2 && form.ageRange.selectedIndex != 3 && form.ageRange.selectedIndex != 4 && form.ageRange.selectedIndex != 5 && form.ageRange.selectedIndex != 6) {
+        alert ( "Please answer this question." );
+        return false;
+    }
+    return true; 
+}
+
+
+function ValidateNumber(field)
+{
+    valid = true;
+    if (field.value == "")
+    {
+        alert ("Please answer all the questions.");
+        valid = false;
+    }
+    if (field.value < 0 || field.value > 10) {
+    	alert ("Please answer between 0 and 10.");
+    	valid = false;
+    }
+    if (isNaN(field.value)) {
+        alert ("Please answer using only numbers.");
+        valid = false;
+    }
+    return valid;
+
+}
+
+function checkPreview() {
+    if (turk.previewMode) {
+        alert ("Please accept this HIT to see more questions.");
+        return false;
+    }
+    return true;
+}
+
+function ValidateText(field)
+{
+    valid = true;
+
+    if (field.value == "" )
+    {
+        alert ("Please answer all the questions.");
+        valid = false;
+    }
+
+    return valid;
+}
+
+/*
+function pressEnter(e) {
+    if (e.keyCode == 13) {
+    	document.rating.next.click();
+    	return false;
+    }
+}
+*/
+
+
+function ValidateFreeResponse() {
+    
+    if ($('#freeResponseInput').val().length > 50)
+    //if ($('#freeResponseInput').val()!=null)
+    {
+        return true;
+    } else {
+        alert ( "Please provide more details." );
+        //alert ( "Please answer the question." );
+        return false;    
+    }
+}
+
+function ValidateDemographicForm() {
+    if ($('input[name="genderButton"]:checked').val()!=null &&
+        $('#ageRange').val()!=null &&
+        $('input[name="nativeLanguage"]').val()!=null) {
+        return true;
+    } else {
+        alert ( "Please answer all the questions." );
+        return false;    
+    }
+}
+
+function ValidateSanityCheck() {
+    if ($('input[name="example1Button"]:checked').val()=="correct") {
+        return true;
+    } else if($('input[name="example1Button"]:checked').val()=="wrong") {
+        alert ( "No, that's not the correct sequence of events." );
+        experiment.sanityCheckCorrect = experiment.sanityCheckCorrect - 1; 
+        return false;    
+    } else {
+        alert ( "Please answer all the questions." );
+        return false;    
+    }
+}
+
+function ValidateRadioButtons() {
+    
+    if ($('input[name="q1"]:checked').val()!=null &&
+        $('input[name="q2"]:checked').val()!=null &&
+        $('input[name="q3"]:checked').val()!=null &&
+        $('input[name="q4"]:checked').val()!=null &&
+        $('input[name="q5"]:checked').val()!=null &&
+        $('input[name="q6"]:checked').val()!=null &&
+        $('input[name="q7"]:checked').val()!=null &&
+        $('input[name="q8"]:checked').val()!=null
+        ) {
+        return true;
+    } else {
+        alert ( "Please answer all the questions." );
+        return false;    
+    }
+}
+
+
+</script>
+
+
+<div class="slide" id="description">
+<p id='logo-text'>Instructions</p>
+<p class="block-text"> We are interested in how people understand other people's emotions. </p>
+<p class="block-text"> You will read <span id="tot-num">{{}}</span> stories and asked to rate the emotions of the people in the story.</p>
+
+<div id="form">
+<button type="button" onclick="this.blur(); experiment.next()">Let's Start!</button>
+</div>
+</div>
+
+
+<div class="slide" id="stage">
+    
+    <div id="response">
+        <center>
+            <p id="emphasis-text"><span id="CharName1"></span> <span id="storySpan1"></span>.</p>
+        </center>
+        <div id="form">
+        
+        <p id="question">
+            How do you think <span id="CharName2">{{}}</span> feels? Please guess how strongly he feels for each of the following emotions:
+            <br><br>
+            Please write a couple of sentences that provides an explanation, or a sequence of events that led to him feeling that way.
+        </p>
+        
+        <form name="q1form">
+        &nbsp; Happiness: &nbsp; &nbsp; 
+            <span id="happinessResponse">
+                Not at all
+                    <input type="radio" name="q1" value="1" />  
+                    <input type="radio" name="q1" value="2" />  
+                    <input type="radio" name="q1" value="3" />  
+                    <input type="radio" name="q1" value="4" />  
+                    <input type="radio" name="q1" value="5" />  
+                    <input type="radio" name="q1" value="6" />  
+                    <input type="radio" name="q1" value="7" />  
+                    <input type="radio" name="q1" value="8" />  
+                    <input type="radio" name="q1" value="9" />  
+                Extremely
+            </span>
+        </form>
+               
+        <form name="q2form">
+        &nbsp; &nbsp; &nbsp; Sadness: &nbsp; &nbsp; &nbsp;
+            <span id="sadnessResponse">
+                Not at all
+                    <input type="radio" name="q2" value="1" />  
+                    <input type="radio" name="q2" value="2" />  
+                    <input type="radio" name="q2" value="3" />  
+                    <input type="radio" name="q2" value="4" />  
+                    <input type="radio" name="q2" value="5" />  
+                    <input type="radio" name="q2" value="6" />  
+                    <input type="radio" name="q2" value="7" />  
+                    <input type="radio" name="q2" value="8" />  
+                    <input type="radio" name="q2" value="9" />  
+                Extremely
+            </span>
+        </form>
+        
+        <form name="q3form">
+        &nbsp; &nbsp; &nbsp; Anger: &nbsp; &nbsp; &nbsp; &nbsp;
+            <span id="angerResponse">
+                Not at all
+                    <input type="radio" name="q3" value="1" />  
+                    <input type="radio" name="q3" value="2" />  
+                    <input type="radio" name="q3" value="3" />  
+                    <input type="radio" name="q3" value="4" />  
+                    <input type="radio" name="q3" value="5" />  
+                    <input type="radio" name="q3" value="6" />  
+                    <input type="radio" name="q3" value="7" />
+                    <input type="radio" name="q3" value="8" />  
+                    <input type="radio" name="q3" value="9" />    
+                Extremely
+            </span>
+        </form>
+        
+        <form name="q4form">
+        &nbsp; &nbsp; Surprise: &nbsp; &nbsp; &nbsp; 
+            <span id="surpriseResponse">
+                Not at all
+                    <input type="radio" name="q4" value="1" />  
+                    <input type="radio" name="q4" value="2" />  
+                    <input type="radio" name="q4" value="3" />  
+                    <input type="radio" name="q4" value="4" />  
+                    <input type="radio" name="q4" value="5" />  
+                    <input type="radio" name="q4" value="6" />  
+                    <input type="radio" name="q4" value="7" />
+                    <input type="radio" name="q4" value="8" />  
+                    <input type="radio" name="q4" value="9" />    
+                Extremely
+            </span>
+        </form>
+        <br>
+        <form name="q5form">
+        &nbsp; &nbsp; Disgust: &nbsp; &nbsp; &nbsp; &nbsp; 
+            <span id="disgustResponse">
+                Not at all
+                    <input type="radio" name="q5" value="1" />  
+                    <input type="radio" name="q5" value="2" />  
+                    <input type="radio" name="q5" value="3" />  
+                    <input type="radio" name="q5" value="4" />  
+                    <input type="radio" name="q5" value="5" />  
+                    <input type="radio" name="q5" value="6" />  
+                    <input type="radio" name="q5" value="7" />
+                    <input type="radio" name="q5" value="8" />  
+                    <input type="radio" name="q5" value="9" />    
+                Extremely
+            </span>
+        </form>
+
+        <form name="q6form">
+        &nbsp; &nbsp; &nbsp; &nbsp; Fear: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <span id="fearResponse">
+                Not at all
+                    <input type="radio" name="q6" value="1" />  
+                    <input type="radio" name="q6" value="2" />  
+                    <input type="radio" name="q6" value="3" />  
+                    <input type="radio" name="q6" value="4" />  
+                    <input type="radio" name="q6" value="5" />  
+                    <input type="radio" name="q6" value="6" />  
+                    <input type="radio" name="q6" value="7" />
+                    <input type="radio" name="q6" value="8" />  
+                    <input type="radio" name="q6" value="9" />    
+                Extremely
+            </span>
+        </form>
+        
+        <form name="q7form">
+        Contentment: &nbsp;
+            <span id="contentmentResponse">
+                Not at all
+                    <input type="radio" name="q7" value="1" />  
+                    <input type="radio" name="q7" value="2" />  
+                    <input type="radio" name="q7" value="3" />  
+                    <input type="radio" name="q7" value="4" />  
+                    <input type="radio" name="q7" value="5" />  
+                    <input type="radio" name="q7" value="6" />  
+                    <input type="radio" name="q7" value="7" />
+                    <input type="radio" name="q7" value="8" />  
+                    <input type="radio" name="q7" value="9" />    
+                Extremely
+            </span>
+        </form>
+        
+        <form name="q8form">
+        Disappointment:
+            <span id="disappointmentResponse">
+                Not at all
+                    <input type="radio" name="q8" value="1" />  
+                    <input type="radio" name="q8" value="2" />  
+                    <input type="radio" name="q8" value="3" />  
+                    <input type="radio" name="q8" value="4" />  
+                    <input type="radio" name="q8" value="5" />  
+                    <input type="radio" name="q8" value="6" />  
+                    <input type="radio" name="q8" value="7" /> 
+                    <input type="radio" name="q8" value="8" />  
+                    <input type="radio" name="q8" value="9" />   
+                Extremely &nbsp; &nbsp;
+            </span>
+        </form>
+
+
+        <br>
+        <button type="button" id="next" onclick="this.blur(); if (ValidateRadioButtons()) {experiment.next();}">Next</button>
+        
+        </div>
+    </div>
+</div>
+
+
+<div class="slide" id="askInfo">
+    
+    <div id="form">
+    
+    <p id="infoQ">Please answer a few questions about yourself. </p>
+    <form name="gender">
+    </br>
+    <span id="infoQ">What is your gender?</span>&nbsp;&nbsp;
+    <input type="radio" name="genderButton" value="M" /><span id="opt">Male</span>&nbsp;&nbsp;
+    <input type="radio" name="genderButton" value="F" /><span id="opt">Female</span>
+    </form>
+    
+    <span id="infoQ">What is your age?</span>&nbsp;&nbsp;
+    <input type="text" id="ageRange" /><br />
+    
+    <form name="language">
+    <span id="infoQ"> What is your native language? </span>&nbsp;&nbsp;
+    <input type="text" name="nativeLanguage" /><br />
+    </form>
+    <form name="comments">
+    </br>
+    </br>
+    
+    <span id="infoQ"> (Optional) Please leave any comments or suggestions regarding this HIT:</span></br>
+    <TEXTAREA name="commentsTextArea" ROWS=10 COLS=50></TEXTAREA>
+    </br>
+    </form>
+    <!--
+    <button type="button" onclick="this.blur(); experiment.end();">Submit</button>
+    -->
+    <button type="button" onclick="this.blur(); if (ValidateDemographicForm()) {experiment.end();}">Submit</button>
+    
+
+    </div>
+</div>
+
+<div class="slide" id="finished">
+  You're finished - thanks for participating! Submitting to Mechanical Turk...
+</div>
+
+<script src="experiment.js"></script>
+</body>
+</html>
