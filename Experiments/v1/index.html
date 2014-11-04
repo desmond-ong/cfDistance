@@ -9,7 +9,17 @@ supposed to be shown at each stage of the experiment. -->
 <style type="text/css">
 .slide, #instructions, #wheel {
     min-width: 600px;
-}    
+}
+#story-text-p {
+    padding-left: 15%;
+    padding-right: 15%;
+    margin: 0 auto;
+    margin-top: 1em;
+    text-align: center;
+    font-size:24; 
+    line-height: 120%;
+}
+
 </style>
 <link rel="stylesheet" href="https://www.stanford.edu/~dco/common/style.css" />
 </head>
@@ -191,7 +201,10 @@ function ValidateRadioButtons() {
         $('input[name="q5"]:checked').val()!=null &&
         $('input[name="q6"]:checked').val()!=null &&
         $('input[name="q7"]:checked').val()!=null &&
-        $('input[name="q8"]:checked').val()!=null
+        $('input[name="q8"]:checked').val()!=null &&
+        $('input[name="responsibilityQ"]:checked').val()!=null &&
+        $('input[name="actualUtilityQ"]:checked').val()!=null &&
+        $('input[name="alternativeUtilityQ"]:checked').val()!=null
         ) {
         return true;
     } else {
@@ -218,15 +231,16 @@ function ValidateRadioButtons() {
 <div class="slide" id="stage">
     
     <div id="response">
+        <p id="question">
+            Imagine that you heard about the following person, <span id="CharName1">{{}}</span>:
+        </p>
         <center>
-            <p id="emphasis-text"><span id="CharName1"></span> <span id="storySpan1"></span>.</p>
+            <p id="story-text-p"><span id="storySpan1"></span></p>
         </center>
         <div id="form">
         
         <p id="question">
             How do you think <span id="CharName2">{{}}</span> feels? Please guess how strongly he feels for each of the following emotions:
-            <br><br>
-            Please write a couple of sentences that provides an explanation, or a sequence of events that led to him feeling that way.
         </p>
         
         <form name="q1form">
@@ -298,8 +312,8 @@ function ValidateRadioButtons() {
         </form>
         <br>
         <form name="q5form">
-        &nbsp; &nbsp; Disgust: &nbsp; &nbsp; &nbsp; &nbsp; 
-            <span id="disgustResponse">
+        &nbsp; &nbsp; &nbsp; &nbsp;  Relief: &nbsp; &nbsp; &nbsp; &nbsp; 
+            <span id="reliefResponse">
                 Not at all
                     <input type="radio" name="q5" value="1" />  
                     <input type="radio" name="q5" value="2" />  
@@ -315,8 +329,8 @@ function ValidateRadioButtons() {
         </form>
 
         <form name="q6form">
-        &nbsp; &nbsp; &nbsp; &nbsp; Fear: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <span id="fearResponse">
+        &nbsp; &nbsp; &nbsp; &nbsp;  Regret: &nbsp; &nbsp; &nbsp;
+            <span id="regretResponse">
                 Not at all
                     <input type="radio" name="q6" value="1" />  
                     <input type="radio" name="q6" value="2" />  
@@ -363,6 +377,75 @@ function ValidateRadioButtons() {
                     <input type="radio" name="q8" value="9" />   
                 Extremely &nbsp; &nbsp;
             </span>
+        </form>
+
+
+        <br>
+        <p id="question">
+            How much responsibility do you think he feels?
+        </p>
+         <form name="responsibilityForm">
+        Responsibility: &nbsp; &nbsp; 
+            <span id="responsibilityResponse">
+                Not at all 
+                    <input type="radio" name="responsibilityQ" value="1" />  
+                    <input type="radio" name="responsibilityQ" value="2" />  
+                    <input type="radio" name="responsibilityQ" value="3" />  
+                    <input type="radio" name="responsibilityQ" value="4" />  
+                    <input type="radio" name="responsibilityQ" value="5" />  
+                    <input type="radio" name="responsibilityQ" value="6" />  
+                    <input type="radio" name="responsibilityQ" value="7" /> 
+                    <input type="radio" name="responsibilityQ" value="8" />  
+                    <input type="radio" name="responsibilityQ" value="9" />   
+                Extremely &nbsp; &nbsp;
+            </span>
+        </form>
+        <br>
+        <p id="question">
+            How bad or good was what <b>actually</b> happened to <span id="CharName3">{{}}</span>?
+        </p>
+        <form name="actualUtilityform">
+        &nbsp; &nbsp;  What <b>actually</b> happened: &nbsp; &nbsp;
+            <span id="actualUtilityResponse">
+                Extremely Bad
+                    <input type="radio" name="actualUtilityQ" value="1" />  
+                    <input type="radio" name="actualUtilityQ" value="2" />  
+                    <input type="radio" name="actualUtilityQ" value="3" />  
+                    <input type="radio" name="actualUtilityQ" value="4" />  
+                    <input type="radio" name="actualUtilityQ" value="5" />  
+                    <input type="radio" name="actualUtilityQ" value="6" />  
+                    <input type="radio" name="actualUtilityQ" value="7" /> 
+                    <input type="radio" name="actualUtilityQ" value="8" />  
+                    <input type="radio" name="actualUtilityQ" value="9" />   
+                Extremely Good
+            </span>
+        </form>
+        <br>
+        <p id="question">
+            How bad or good was what <b>could have</b> happened to <span id="CharName4">{{}}</span>?
+        </p>
+        <form name="alternativeUtilityform">
+        What <b>could have</b> happened: &nbsp; 
+            <span id="alternativeUtilityResponse">
+                Extremely Bad
+                    <input type="radio" name="alternativeUtilityQ" value="1" />  
+                    <input type="radio" name="alternativeUtilityQ" value="2" />  
+                    <input type="radio" name="alternativeUtilityQ" value="3" />  
+                    <input type="radio" name="alternativeUtilityQ" value="4" />  
+                    <input type="radio" name="alternativeUtilityQ" value="5" />  
+                    <input type="radio" name="alternativeUtilityQ" value="6" />  
+                    <input type="radio" name="alternativeUtilityQ" value="7" /> 
+                    <input type="radio" name="alternativeUtilityQ" value="8" />  
+                    <input type="radio" name="alternativeUtilityQ" value="9" />   
+                Extremely Good
+            </span>
+        </form>
+
+        <p id="question">
+            What do you think <span id="CharName5">{{}}</span> was thinking after this event?
+        </p>
+        <form name="freeResponseForm">
+        <textarea name="freeResponseInput" id="freeResponseInput" ROWS=10 COLS=70></textarea>
         </form>
 
 
