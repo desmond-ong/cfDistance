@@ -263,23 +263,21 @@ var allConditions = [
 ],
 [
 {"Version":"1", "storyID":11, "numberSuffix": 0, "storyPreName": "", "storyPostName": " was in line for a free gift. When he was number ", "storyPostNumber": " in the line, the promoter announced that they were out of free gifts.", "storyPostNamePositive": " was in line for a free gift. When he got to the front of the line and received his gift, he noticed that they only had ", "storyPostNumberPositive": " gifts left."},
-{"Version":"1", "storyID":12, "numberSuffix": 0, "storyPreName": "", "storyPostName": " was baking a large batch of fudge brownies for a party he was throwing. He was in a rush, and forgot to run to the store to get eggs. As a result, he was ", "storyPostNumber": " eggs short.", "storyPostNamePositive": "Bob was baking a large batch of fudge brownies for a party he was throwing. He was in a rush, and forgot to run to the store to get eggs. He managed to complete his recipe with ", "storyPostNumberPositive": " eggs leftover."},
-{"Version":"1", "storyID":13, "numberSuffix": 0, "storyPreName": "", "storyPostName": " had a tight connection between flights. After running to the next gate, he was ", "storyPostNumber": " minutes late for his next flight.", "storyPostNamePositive": " had a tight connection between flights. After running to the next gate, he was ", "storyPostNumberPositive": " minutes early for his next flight."},
-{"Version":"1", "storyID":14, "numberSuffix": 0, "storyPreName": "", "storyPostName": " had a huge group of children 'trick-or-treat'-ing at his door on Halloween. After counting the amount of candy left in his candy bowl, he realized he was ", "storyPostNumber": " pieces of candy short.", "storyPostNamePositive": " had a huge group of children 'trick-or-treat'-ing at his door on Halloween. After counting the amount of candy left in his candy bowl, he realized he had ", "storyPostNumberPositive": " pieces of candy leftover."},
-{"Version":"1", "storyID":15, "numberSuffix": 0, "storyPreName": "", "storyPostName": " bought some paint to paint his fence. The paint ran out with ", "storyPostNumber": " inches of fence remaining.", "storyPostNamePositive": " bought some paint to paint his fence. He finished painting the fence, with enough paint left for an additional ", "storyPostNumberPositive": " inches of fence."},
-{"Version":"1", "storyID":16, "numberSuffix": 0, "storyPreName": "", "storyPostName": " was rushing from work to an ice cream place. He arrived ", "storyPostNumber": " minutes after it closed.", "storyPostNamePositive": "  was rushing from work to an ice cream place. He arrived ", "storyPostNumberPositive": " minutes before it closed."},
-{"Version":"1", "storyID":17, "numberSuffix": 0, "storyPreName": "", "storyPostName": " had a job interview this morning. There was morning traffic. He was ", "storyPostNumber": " minutes late for his interview.", "storyPostNamePositive": " had a job interview this morning. There was morning traffic. He was ", "storyPostNumberPositive": " minutes late for his interview."},
-{"Version":"1", "storyID":18, "numberSuffix": 0, "storyPreName": "", "storyPostName": " was taking part in a world record attempt for most number of hot dogs eaten in an hour. He was ", "storyPostNumber": " hot dogs short of breaking the previous record.", "storyPostNamePositive": " was taking part in a world record attempt for most number of hot dogs eaten in an hour. He ate ", "storyPostNumberPositive": " hot dogs more than the previous record."},
-{"Version":"1", "storyID":19, "numberSuffix": 0, "storyPreName": "", "storyPostName": " was at the laundromat doing a large batch of laundry for the whole house. After counting out his quarters, he realized he was ", "storyPostNumber": " quarters short.", "storyPostNamePositive": " was at the laundromat doing a large batch of laundry for the whole house. After counting out his quarters, he realized he had ", "storyPostNumberPositive": " quarters leftover."},
-{"Version":"1", "storyID":20, "numberSuffix": 0, "storyPreName": "", "storyPostName": " picked up a discarded car roof luggage rack, and decided to take it home. When he got home, he found out that the rack was ", "storyPostNumber": " inches too long to fit securely on top of his car.", "storyPostNamePositive": " picked up a discarded car roof luggage rack, and decided to take it home. When he got home, he found out that the rack fit on top of his car, with about ", "storyPostNumberPositive": " inches to spare."},
-{"Version":"1", "storyID":21, "numberSuffix": 0, "storyPreName": "", "storyPostName": " finished his meal and got up to pay. At the counter, he realized that he had forgotten to get cash from the ATM, and was ", "storyPostNumber": " dollars short.", "storyPostNamePositive": " finished his meal and got up to pay. At the counter, he counted out all his change, paid for the meal, and had just ", "storyPostNumberPositive": " dollars left."},
-{"Version":"1", "storyID":22, "numberSuffix": 0, "storyPreName": "", "storyPostName": " received a letter at the end of the year from his frequent flyer club. He had missed the 'Silver' level, earning ", "storyPostNumber": " hundred miles less than the requirement.", "storyPostNamePositive": " received a letter at the end of the year from his frequent flyer club. He had reached the 'Silver' level, earning ", "storyPostNumberPositive": " hundred miles more than the requirement."}
+{"Version":"1", "storyID":12, "numberSuffix": 0, "storyPreName": "", "storyPostName": " had a tight connection between flights. After running to the next gate, he was ", "storyPostNumber": " minutes late for his next flight.", "storyPostNamePositive": " had a tight connection between flights. After running to the next gate, he was ", "storyPostNumberPositive": " minutes early for his next flight."},
+{"Version":"1", "storyID":13, "numberSuffix": 0, "storyPreName": "", "storyPostName": " had a huge group of children 'trick-or-treat'-ing at his door on Halloween. After counting the amount of candy left in his candy bowl, he realized he was ", "storyPostNumber": " pieces of candy short.", "storyPostNamePositive": " had a huge group of children 'trick-or-treat'-ing at his door on Halloween. After counting the amount of candy left in his candy bowl, he realized he had ", "storyPostNumberPositive": " pieces of candy leftover."},
+{"Version":"1", "storyID":14, "numberSuffix": 0, "storyPreName": "", "storyPostName": " bought some paint to paint his fence. The paint ran out with ", "storyPostNumber": " inches of fence remaining.", "storyPostNamePositive": " bought some paint to paint his fence. He finished painting the fence, with enough paint left for an additional ", "storyPostNumberPositive": " inches of fence."},
+{"Version":"1", "storyID":15, "numberSuffix": 0, "storyPreName": "", "storyPostName": " was rushing from work to an ice cream place. He arrived ", "storyPostNumber": " minutes after it closed.", "storyPostNamePositive": "  was rushing from work to an ice cream place. He arrived ", "storyPostNumberPositive": " minutes before it closed."},
+{"Version":"1", "storyID":16, "numberSuffix": 0, "storyPreName": "", "storyPostName": " had a job interview this morning. There was morning traffic. He was ", "storyPostNumber": " minutes late for his interview.", "storyPostNamePositive": " had a job interview this morning. There was morning traffic. He was ", "storyPostNumberPositive": " minutes late for his interview."},
+{"Version":"1", "storyID":17, "numberSuffix": 0, "storyPreName": "", "storyPostName": " was taking part in a world record attempt for most number of hot dogs eaten in an hour. He was ", "storyPostNumber": " hot dogs short of breaking the previous record.", "storyPostNamePositive": " was taking part in a world record attempt for most number of hot dogs eaten in an hour. He ate ", "storyPostNumberPositive": " hot dogs more than the previous record."},
+{"Version":"1", "storyID":18, "numberSuffix": 0, "storyPreName": "", "storyPostName": " was at the laundromat doing a large batch of laundry for the whole house. After counting out his quarters, he realized he was ", "storyPostNumber": " quarters short.", "storyPostNamePositive": " was at the laundromat doing a large batch of laundry for the whole house. After counting out his quarters, he realized he had ", "storyPostNumberPositive": " quarters leftover."},
+{"Version":"1", "storyID":19, "numberSuffix": 0, "storyPreName": "", "storyPostName": " finished his meal and got up to pay. At the counter, he realized that he had forgotten to get cash from the ATM, and was ", "storyPostNumber": " dollars short.", "storyPostNamePositive": " finished his meal and got up to pay. At the counter, he counted out all his change, paid for the meal, and had ", "storyPostNumberPositive": " dollars left."},
+{"Version":"1", "storyID":20, "numberSuffix": 0, "storyPreName": "", "storyPostName": " received a letter at the end of the year from his frequent flyer club. He had missed the 'Silver' level, earning ", "storyPostNumber": " hundred miles less than the requirement.", "storyPostNamePositive": " received a letter at the end of the year from his frequent flyer club. He had reached the 'Silver' level, earning ", "storyPostNumberPositive": " hundred miles more than the requirement."}
 ]
 ];
 
 
-
-
+//{"Version":"1", "storyID":12, "numberSuffix": 0, "storyPreName": "", "storyPostName": " was baking a large batch of fudge brownies for a party he was throwing. He was in a rush, and forgot to run to the store to get eggs. As a result, he was ", "storyPostNumber": " eggs short.", "storyPostNamePositive": "Bob was baking a large batch of fudge brownies for a party he was throwing. He was in a rush, and forgot to run to the store to get eggs. He managed to complete his recipe with ", "storyPostNumberPositive": " eggs leftover."},
+//{"Version":"1", "storyID":19, "numberSuffix": 0, "storyPreName": "", "storyPostName": " picked up a discarded car roof luggage rack, and decided to take it home. When he got home, he found out that the rack was ", "storyPostNumber": " inches too long to fit securely on top of his car.", "storyPostNamePositive": " picked up a discarded car roof luggage rack, and decided to take it home. When he got home, he found out that the rack fit on top of his car, with about ", "storyPostNumberPositive": " inches to spare."},
 
 
 var charNameList = ["Alex", "Bob", "Charlie", "Chris", 
@@ -292,10 +290,13 @@ var charNameOrder = shuffledArray(charNameList.length);
 var numConditions = allConditions.length;
 
 // Randomly select a condition number for this particular participant
-var chooseCondition = Math.random(Math.round()); //1;//0;//random(0, numConditions-1);
+var chooseCondition = Math.ceil(Math.random()*3); //1;//0;//random(0, numConditions-1);
+if(chooseCondition==3) {
+  chooseCondition=2;
+}
 
 // Based on condition number, choose set of input (trials)
-var allTrialOrders = allConditions[chooseCondition];
+var allTrialOrders = allConditions[chooseCondition-1];
 
 // Number of trials in each condition
 var numTrials = allTrialOrders.length; //allTrialOrders.length;
@@ -342,7 +343,7 @@ var experiment = {
   
   storyIDArray: new Array(numTrials),
   orderArray: new Array(numTrials),
-  condition: chooseCondition + 1,
+  condition: chooseCondition,
   positiveArray: new Array(numTrials),
   distanceArray: new Array(numTrials),
   
@@ -355,6 +356,7 @@ var experiment = {
   q7responseArray: new Array(numTrials),
   q8responseArray: new Array(numTrials),
   responsibilityArray: new Array(numTrials),
+  effortArray: new Array(numTrials),
   actualUtilityArray: new Array(numTrials),
   alternativeUtilityArray: new Array(numTrials),
   freeResponses: new Array(numTrials),
@@ -436,6 +438,7 @@ The function that gets called when the sequence is finished.
         experiment.q7responseArray[numComplete-1] = $('input[name="q7"]:checked').val();
         experiment.q8responseArray[numComplete-1] = $('input[name="q8"]:checked').val();
         experiment.responsibilityArray[numComplete-1] = $('input[name="responsibilityQ"]:checked').val();
+        experiment.effortArray[numComplete-1] = $('input[name="effortQ"]:checked').val();
         experiment.actualUtilityArray[numComplete-1] = $('input[name="actualUtilityQ"]:checked').val();
         experiment.alternativeUtilityArray[numComplete-1] = $('input[name="alternativeUtilityQ"]:checked').val();
         experiment.freeResponses[numComplete-1] = $('#freeResponseInput').val();
@@ -452,6 +455,7 @@ The function that gets called when the sequence is finished.
         $('input[name="q7"]:').prop('checked', false);
         $('input[name="q8"]:').prop('checked', false);
         $('input[name="responsibilityQ"]:checked').prop('checked', false);
+        $('input[name="effortQ"]:checked').prop('checked', false);
         $('input[name="actualUtilityQ"]:checked').prop('checked', false);
         $('input[name="alternativeUtilityQ"]:checked').prop('checked', false);
         $('#freeResponseInput').val('');

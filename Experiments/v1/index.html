@@ -203,6 +203,7 @@ function ValidateRadioButtons() {
         $('input[name="q7"]:checked').val()!=null &&
         $('input[name="q8"]:checked').val()!=null &&
         $('input[name="responsibilityQ"]:checked').val()!=null &&
+        $('input[name="effortQ"]:checked').val()!=null &&
         $('input[name="actualUtilityQ"]:checked').val()!=null &&
         $('input[name="alternativeUtilityQ"]:checked').val()!=null
         ) {
@@ -382,7 +383,7 @@ function ValidateRadioButtons() {
 
         <br>
         <p id="question">
-            How much responsibility do you think he feels?
+            How much responsibility do you think he feels for what happened?
         </p>
          <form name="responsibilityForm">
         Responsibility: &nbsp; &nbsp; 
@@ -401,6 +402,30 @@ function ValidateRadioButtons() {
             </span>
         </form>
         <br>
+
+        <br>
+        <p id="question">
+            How hard did he try?
+        </p>
+         <form name="effortForm">
+            Effort: &nbsp; &nbsp; 
+            <span id="effortResponse">
+                Not at all 
+                    <input type="radio" name="effortQ" value="1" />  
+                    <input type="radio" name="effortQ" value="2" />  
+                    <input type="radio" name="effortQ" value="3" />  
+                    <input type="radio" name="effortQ" value="4" />  
+                    <input type="radio" name="effortQ" value="5" />  
+                    <input type="radio" name="effortQ" value="6" />  
+                    <input type="radio" name="effortQ" value="7" /> 
+                    <input type="radio" name="effortQ" value="8" />  
+                    <input type="radio" name="effortQ" value="9" />   
+                Extremely Hard &nbsp; &nbsp;
+            </span>
+        </form>
+        <br>
+        
+
         <p id="question">
             How bad or good was what <b>actually</b> happened to <span id="CharName3">{{}}</span>?
         </p>
