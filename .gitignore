@@ -14,4 +14,6 @@ Thumbs.db
 *.aux
 *.log
 *.synctex.gz
-relationalToE.pdf
+*.bbl
+*.blg
+cfDistance.pdf

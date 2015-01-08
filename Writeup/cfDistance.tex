@@ -25,7 +25,7 @@
 \usepackage{apacite}
 
 
-\title{ XXX Title }
+\title{ Counterfactual Distance (?) }
  
 \author{{\large \bf Desmond C. Ong (dco@stanford.edu)} \\
 {\large \bf Jamil Zaki (jzaki@stanford.edu)} \\
@@ -43,80 +43,37 @@
 abstract text
 
 \textbf{Keywords:} 
-Affective cognition; Emotions; Social cognition; Computational Modeling
+Near Miss; Counterfactual Distance; Lay Theories; Emotion
 \end{abstract}
 
 
-%you could say that there's simple ``bob feels E" and relational ``bob feels E about X" type emotion attributions, where E is an emotion and X is an event. there are two questions to address: what is the relation between the two types of attribution, and what is the relation between two relational ones, depending on the relation between the events.
+\begin{quote}
+\textit{``Close only counts in horseshoes and hand grenades"} 
+-- English Idiom
+\end{quote}
 
+	Though we live in only one of many possible realizations of the world, our mental lives---and consequently, our emotional lives---are constantly spent exploring other possible worlds \cite{Bryne2002, Gleicher1990, Johnson1986, Roese1997}. This is done by considering counterfactuals, or what if’s: What if I had woken up earlier (then I would not have missed my train)? What if I had not made that snarky remark to my significant other?
 
-In our daily lives, we constantly interact with others around us, and invariably have to reason about others' emotional states. There are two classes of intuitive attributions than observers often make, the first being simple emotional state attributions -- ``Bob feels happy (in general)". The second class of emotional state attributions are relational in nature: ``Bob feels happy about X", where X can be an event like ``receiving a promotion" or ``seeing his children". 
+	One reason why counterfactual comparisons, and ``near-miss" counterfactual comparisons in particular, are so mentally engaging is because many of these possible worlds almost happened. Consider \citeA{Kahneman1982}'s famous example of missing a plane by 5 minutes, as opposed to 30 minutes: people reliably judge the person who narrowly missed his plane to feel much worse than the one who missed it by a wider margin. One proposed reason is that it is much easier to generate possible counterfactual antecedents that would have resulted in the counterfactual consequent of catching the plane (``If only I woke up 5 minutes earlier; if only I had packed my bag the night before"). That is, if the counterfactual world is ``closer" to the current world, then perhaps the counterfactual world would only require a smaller change in the causal chain that led up to the current world in order to be realized.
 
-	Relational attributions are justifiable according to some lay causal theory. Intuitively, emotions must be ``caused" by some event in the world, and 
+	Previous research has identified the impact of ``closeness" on counterfactual thought \cite{Kahneman1982, Kahneman1990, Roese1997, Teigen1996}. ``Closeness" not only increases the activation of counterfactual thought (by increasing the salience of the counterfactual world)\cite{Roese1997}, but also amplifies the affective consequence of the counterfactual comparison \cite{Johnson1986, Kahneman1982}. Yet, there has been no formal model of how these various types of distances factor into the counterfactual reasoning process.
 
+In particular, there are 2 main questions that a model should answer:
+How are different types of distances related?
 
-Observers have a lay theory that something Lay observers often attribute emotions 
-	Indeed, affective and cognitive scientists have debated for decades over whether 
+Missing a plane by 5 minutes versus 30 \cite{Kahneman1982}
 
+Missing a goal in soccer by 5 inches versus 30
 
+Entering a store just ahead of a person who won a prize for being the one-millionth customer \cite{Roese1997}
 
-1) what is the relation between the two types of attribution, 
+A “near miss” on a slot machine (e.g., Clark, Lawrence, Astley-Jones, \& Gray, 2009)
 
-2) what is the relation between two relational ones, depending on the relation between the events.
+In a game where one has to roll a 6 on a die to win, rolling a 5 versus rolling a 2 \cite{Kahneman1990}
 
+How do these distances factor (quantitatively) into our affective judgments?
 
-
-recency: maybe show decay?
-
-1) Ps can separate emotions attributed to event X and Y. i.e. emotionX depends very little on Y.
-
-2) temporal order: if X happened, then Y happened, Y matters more to overall emotion
-
-3) evidence order: recency in Ps judgments. The attribution that the participant most recently gave is weighed more.
-
-
-do a multilevel analysis to see if maybe some participants are sensitive to both; some are not.? maybe accounted for 
-
-
-result: even though there's no cross-talk, the mere existence of the second event removes loss aversion
-
-result: in judging mood across multiple events, people expect no loss aversion.
-
-result: presentation order matters!
-
-H1: Mood = average
-H2: Mood = time-weighted average (more recent events matter more)
-
-relate context
-with elemental relational attributions
-and overall mood attributions
-
-revisit analysis based on hypotheses of these components
-
-look at a "first-half, last-half" analysis. It's a somewhat hard experiment, maybe Ss are getting tired or bored.
-
-sanity check: how much did he win overall?
-
----
-
-8am vs noon
-10am vs noon
-
-crossed with
-
-ask about mood at 2pm
-ask about mood at 4pm
-
-----
-
-When human observers attribute emotions to others, they are often doing so with respect to 
-
-
-
-Social life constantly requires us to decipher information about others into inferences about their emotional states: for example, we have to reason about what makes our romantic partners happy (a surprise gift?) or angry (not doing one's chores?), and what they would do in those emotional states, in order to plan our upcoming interactions. Such \textit{affective cognition}, or our ability to reason about others' emotions, scaffolds everything from cooperation to the maintenance of social relationships. Affective cognition lies in the intersection of two foundational social cognitive topics, Theory of Mind (ToM; the ability to reason about others' mental states) and Empathy (the ability to feel and understand others' emotions). Although the past decade has seen much progress in understanding ToM and empathy using neuroscience \cite{Koster-Hale2013, Zaki2012}, developmental \cite{Meltzoff2011}, and computational \cite{Baker2009, Goodman2013} approaches, somewhat less attention has been paid specifically to affective cognition and some of its foundational cognitive questions. How do we represent (cognitively and neurally) others' emotional states? How do we reason with those representations? How do we make predictions and inferences about others' future actions or desires based on their emotions? Finally, how does affective cognition shift across development? The aim of the symposium is to answer these, and other relevant questions, at the forefront of this field.
-
-
-Humans are extremely skilled at reasoning about others’ emotions; this ability is crucially important to forming and maintaining social relationships. Yet despite its importance, few formal or quantitative theories have successfully described how affective cognition operates. Here we address this gap by constructing a computational model, drawing on tools from Bayesian statistics. We use a simple gambling paradigm to quantitatively test this model, finding that emotion judgments are well explained in terms of a low-dimensional representation based on value-related computations. Further, we demonstrate that emotion inferences across multiple situations are tightly predicted by Bayes’ rule. Our results speak to a deep structural relationship between emotions and cognitive inference, and suggest wide-ranging applications to basic psychological theory and psychiatry.
+Here, I propose a model of a lay theory of counterfactual distance, a distance measure to the counterfactual world, and in particular, how counterfactual distance might factor into the affective judgments that human observers make about possible counterfactual worlds. These distances---temporal distance; physical distance; semantic distance in some mental representation space; etc---measure the separation between the current world and the counterfactual world being considered. The model proposes how observers consider these other possible worlds and details the affective impact that counterfactual distance has. 
 
 
 
