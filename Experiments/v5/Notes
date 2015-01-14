@@ -1,0 +1,8 @@
+Notes:
+Export from Quicktime with audio
+
+audio tracks are separate, so have to combine them with Audacity (Tracks --> Mix and Render)
+
+Then use iMovie to align the tracks (nasty trimming here...). Can try to fix crop but may introduce black bars
+
+Finally use Miro to convert to .ogg and .websm as well
