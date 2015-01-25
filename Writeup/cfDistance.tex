@@ -61,19 +61,34 @@ Near Miss; Counterfactual Distance; Lay Theories; Emotion
 	
 	Psychologists have long known that near-misses form an integral, but surprisingly not well understood part of affective cognition \cite{Johnson1986, Gleicher1990}. Most of this work falls under the broader category of counterfactual thinking \cite{Bryne2002,McMullen2002, Medvec1997, Roese1997}. Near-miss counterfactuals are particularly engaging to think about, because these possible worlds almost happened: they were separated from the current world by some small ``distance". Consider \citeA{Kahneman1982}'s classic example of Mr Tees, who missed his plane by 5 minutes, and Mr Crane, who missed his plane by 30 minutes. Both men were delayed due to traffic, but people consistently and reliably judge the person who narrowly missed his plane to feel much worse than the one who missed it by a wider margin. One proposed \textit{causally-relevant} explanation for the near miss effect is that of controllability: Mr Tees could easily think of actions he could have done differently (``if only I woke up ten minutes earlier") that would have led to him catching the plane. 
 
+
+% Can this paragraph fit here?
+	Based upon findings from previous work \cite{Kahneman1982, Johnson1986, Gleicher1990}, we can list several predicted properties of near-miss effects. See Fig. \ref{PredictionFig} for an illustration, where we have included both near-miss and just-hit effects, although we focus on the former in this paper. First, the near-miss effect should be \textit{non-linear} with respect to distance to the desired outcome---the near miss effect should only occur at small distances, and should matter increasingly more with increasingly smaller distances. Second, the magnitude of the near-miss effect should be \textit{small but proportional} to the difference between the desired and undesired outcome.
+
+
+\begin{figure}[htb!]
+\includegraphics[width=\columnwidth]{images/predictionFig.png}
+\caption{ Prediction. A plot of emotional valence against ``distance" to the counterfactual world, where the unshaded region represents the desired outcome, and the shaded region, the ``miss" region. Near misses and ``just-hits" are predicted to be non-linear variations of valence at small distances to the miss-hit boundary.}
+\label{PredictionFig}
+\end{figure}
+
+
+
 % be a little less vague 
 %The distances that separate the desired-but-unattained counterfactual world from the current world.
 
-	There however, remains many open questions, and in this paper we address just three of them. First, what are the dimensions of distance that observers judge to be relevant to an agent's emotions?  The answer most commonly proposed by the current literature asserts that people should consider causally-relevant dimensions, like the amount of time one misses a plane by. This would predict that people should not exhibit near miss effects in their lay theory when considering games of chance, or random events, as the causal process that generated the outcomes are based on chance. However, previous work has shown that gamblers persist more after near misses, showing a near-miss effect on motivation even though the outcome of games like slots are independent of the gambler's actions \cite{Kassinove2001, Reid1986}. In Experiment 1, we show that observers readily judge an agent who ``narrowly misses" on a die game (by rolling a number close to the target number) to feel worse than one who misses by a larger amount, even though outcomes on a die game are not ordered like the number line. This suggests that observers may also consider causally-irrelevant dimensions
+	There however, remains many open questions regarding the nature of the near-miss effect, and in this paper we address three of them. First, what are the dimensions of distance that observers judge to be relevant to an agent's emotions?  The answer most commonly proposed by the current literature asserts that people should consider causally-relevant dimensions, like the amount of time one misses a plane by. This would predict that people should not exhibit near miss effects in their lay theory when considering games of chance, or random events, as the causal process that generated the outcomes are based on chance. However, previous work has shown that gamblers persist more after near misses, showing a near-miss effect on motivation even though the outcome of games like slots are independent of the gambler's actions \cite{Kassinove2001, Reid1986}. In Experiment 1, we show that observers readily judge an agent who ``narrowly misses" on a die game (by rolling a number close to the target number) to feel worse than one who misses by a larger amount, even though outcomes on a die game are not ordered like the number line. This suggests that observers may also consider causally-irrelevant dimensions
 
 %Observers seem to consider causally-irrelevant dimensions of distance as well, when a causally-relevant dimension does not exist.
 
 % fix 2nd sentence
-Second, how do observers reason using these distance dimensions? Depending on the context, different dimensions of distance should matter to different extents. In Experiment 2, we show that observers are sensitive to information that changes the relevance of different distances in a random card-guessing task, and spontaneously alter their judgments during the task when presented with additional information.
+Second, how do observers reason using these distance dimensions? In any particular situation, there could be more than one dimension. When a 
+
+
+Depending on the context, different dimensions of distance should matter to different extents. In Experiment 2, we show that observers are sensitive to information that changes the relevance of different distances in a random card-guessing task, and spontaneously alter their judgments during the task when presented with additional information.
 \textcolor{red}{(to discuss with Noah more on this point. action-outcome contingency. also rewrite to reduce the ``task demand" reaction that readers will have)}
 
-Finally, how much does a near-miss cost psychologically? That is, what is the size of the near miss effect relative to the utility of actually winning and losing? In Experiment 3, we build upon a previous model of affective cognition \cite{OngAffCog} and explicitly incorporate modeling of near-miss effects into this quantitative model. This allows us to estimate relative effect sizes, which gives us a better understanding of near miss judgments, but more importantly, allows the integration of prior work on factors affecting near miss emotional judgments into building more comprehensive models of affective cognition.  %... shed more light on their modeling.
-
+Finally, how much does a near-miss cost psychologically? That is, what is the size of the near miss effect (narrowly missing a desired outcome) relative to the utility of actually obtaining said desired outcome? In Experiment 3, we build upon a previous model of affective cognition \cite{OngAffCog} using a gambling paradigm that allows us to parametrically vary features of the situation that affects judgment of emotions, such as the payoff structure and the distance to the neighboring outcomes. We explicitly incorporate modeling of near-miss effects into an existing quantitative model. This allows us to estimate relative effect sizes and gives us a better quantitative understanding of near miss judgments. More importantly, this allows the integration of near miss emotional judgments into existing models of affective cognition, and allows the construction of more comprehensive models of affective cognition.  
 
 
 
@@ -121,14 +136,6 @@ Finally, how much does a near-miss cost psychologically? That is, what is the si
 
 
 
-\section{Predictions}
-
-
-\begin{figure}[htb!]
-\includegraphics[width=\columnwidth]{images/predictionFig.png}
-\caption{ Prediction. A plot of emotional valence against ``distance" to the counterfactual world, where the unshaded region represents the desired outcome, and the shaded region, the ``miss" region. Near misses and near hits are predicted to be non-linear variations of valence at small distances to the miss-hit boundary.}
-\label{PredictionFig}
-\end{figure}
 
 
 %%%%% This is the basic vignette experiment %%%%%
@@ -163,15 +170,18 @@ Finally, how much does a near-miss cost psychologically? That is, what is the si
 
 %% Dice Vignette experiment
 
+
+
+
+
 \section{Experiment 1: Dice vignette}
 
 \subsubsection{Participants.} We recruited 150 participants through Amazon's Mechanical Turk.
 
-\subsubsection{Procedures.} Participants read about two characters, Jacob and Alex, who were playing a gambling game, and both needed to roll a 6 on a die to win. Jacob rolled a 1, while Alex rolled a 5. Participants then answered attention check questions (``what did X roll?") before attributing emotions along six categories (\textit{happiness}, \textit{sadness}, \textit{relief}, \textit{regret}, \textit{contentment} and \textit{disappointment})  to each character. Finally, they answered a three-alternative forced choice question: ``Which character felt worse?", and were allowed to endorse ``they both felt equally bad" as an option.
+\subsubsection{Procedures.} Participants read about two characters, Jacob and Alex, who were playing a gambling game, and both needed to roll a 6 on a die to win. Jacob rolled a 1, while Alex rolled a 5. Participants then answered attention check questions (``what did X roll?") before attributing emotions along six categories (\textit{happiness}, \textit{sadness}, \textit{relief}, \textit{regret}, \textit{contentment} and \textit{disappointment})  to each character. Finally, they answered a three-alternative forced choice question: ``Which character felt worse?", and were allowed to endorse ``they both felt equally bad" as an option. They were allowed to give a free-response justification for their choice.
 
-\subsubsection{Results.} Three participants were excluded for failing the attention check. Participants rated the near miss character (the character who rolled the 5) as feeling significantly more disappointed ($t(146)=2.17, p=0.03$), but no different on the other emotions. In the forced-choice question, a large majority (107/147 = 73\%) rated both characters as feeling equally bad. Among the remaining participants, significantly more participants rated the character who rolled the 5 (the near miss character) as feeling worse (N=30) compared to the character who rolled a 1 (N=10) (xxx todo stats...)
+\subsubsection{Results.} Three participants were excluded for failing the attention check. Participants rated the near miss character (the character who rolled the 5) as feeling significantly more disappointed ($t(146)=2.17, p=0.03$), but no different on the other emotions. In the forced-choice question, a large majority (107/147 = 73\%) rated both characters as feeling equally bad. Among the remaining participants, significantly more participants rated the character who rolled the 5 (the near miss character) as feeling worse (N=30) compared to the character who rolled a 1 (N=10; exact binomial test $p=.002$; bootstrapped simulation with 10,000 iterations on full sample, $p=0.0007$).
 
-%todo stats
 
 \begin{figure}[htb!]
 \includegraphics[width=\columnwidth]{images/Expt1results.png}
@@ -179,7 +189,10 @@ Finally, how much does a near-miss cost psychologically? That is, what is the si
 \label{Expt1ResultFig}
 \end{figure}
 
-discuss results.
+To gain further insight into participants' judgments, we analyzed their free-response justifications and coded them into three categories. 84 (57\%) participants made their judgments based on equal outcomes (e.g. ``they both lost so they should feel equally bad"), 40 (27\%) participants made reference to closeness (e.g. ``he was soooo close"), and only 22 (15\%) participants made an explicit reference to there being no closeness difference (``it's a 1/6 chance for both of them"; ``the numbers are meaningless"). 1 participant chose not to give a justification. 
+
+
+Thus, we find that while a large majority of participants said that both characters felt equally bad, this is primarily due to the fact that both characters lost. This is in line with our predictions that the near-miss effect is much smaller in magnitude than the actual utility derived from the loss, and perhaps for these participants, the near miss difference was not above their threshold to endorse a difference in emotional valence. Interestingly, of the participants who made any remarks on closeness or the lack thereof, the majority actually remarked that there is a subjective feeling of closeness. This suggests that some observers are sensitive to near-miss effects in this scenario and the majority (irrationally) judge closeness based on a causally-irrelevant dimension.
 
 
 
@@ -191,45 +204,52 @@ discuss results.
 
 We designed Experiment 2 to dissociate closeness effects along different dimensions. Using a card guessing task, we manipulated the task-relevance of both the positions of the cards or the numbers written on the cards, and showed that only near-miss effects along the task relevant-dimension are incorporated into observers' lay theory of emotion.
 
-\subsubsection{Participants.} We recruited 300 participants through Amazon's Mechanical Turk, and assigned them to one of three conditions: Single-Trial-Position (N=100), Two-Trial-Position (N=100), Single-Trial-Number (N=100).
+\subsubsection{Participants.} We recruited 300 participants through Amazon's Mechanical Turk, and assigned them to one of three conditions: Single-Step-Position (\textit{Pos}; N=100), Single-Step-Number (\textit{Num}; N=100), and Two-Step-Position (\textit{Two-Pos}; N=100).
 
 
 \subsubsection{Procedures.} 
 
 \begin{figure}[htb!]
 \includegraphics[width=\columnwidth]{images/card_paradigm.png}
-\caption{ Expt 2 Paradigm. The target card, 10, is outlined in purple. 19 (red), is \textbf{Proximal}ly close, 11 (green) is \textbf{Numerical}ly close, while 1 (blue) is \textbf{Far} on both proximity and numerosity. }
+\caption{ Expt 2 Paradigm, \textit{Pos} condition. Characters' goal is to pick the target card, 10, outlined in purple. In the critical trial, the characters pick 19, in red, which is \textbf{Proximal}ly close, and 11, in green, which is \textbf{Numerical}ly close. In other trials, one of the cards picked might be the number 1 (indicated by the blue arrow), which is \textbf{Far} on both proximity and numerosity. }
 \label{Expt2ParadigmFig}
 \end{figure}
 
-In the Single-Trial-Position (ST-Pos) condition, participants saw a 5x4 array of cards face down. They were told that two characters were playing a game: the cards were numbered 1-20, and they had to pick the number 10 to win. After the characters picked their cards, the winning number 10 is revealed (see Fig. \ref{Expt2ParadigmFig}) There were three possible characters (of which participants only saw two): Scott, who picked 19 (proximally-close), Frank, who picked 11 (numerically-close), and David, who picked 1 (far). Participants rated the emotions of the two characters they saw (along the same six emotions as Expt 1). Finally, participants answered a forced-choice question, ``Who felt worse?", with the option to say ``Both felt equally bad." In total there are 3 possible pairings (``Proximal vs. Numerical", ``Proximal vs. Far", and ``Numerical vs. Far"), which are all between subject manipulations. Each participant only saw one trial.
+In the Single-Step-Position (\textit{Pos}) condition, participants saw a 5x4 array of cards face down. They were told that two characters were playing a game: the cards were numbered 1-20, and they had to pick the number 10 to win. There were three possible characters (of which participants only saw two): Scott, who picked 19 (proximally-close), Frank, who picked 11 (numerically-close), and David, who picked 1 (far). For example, in the trial depicted in Fig. \ref{Expt2ParadigmFig}, participants saw the proximally-close participant and the numerically-close participant. After the characters picked their cards, the winning number 10 is revealed. Participants then rated the emotions of the two characters they saw (along the same six emotions as Expt 1). Finally, participants answered a forced-choice question, ``Who felt worse?", with the option to say ``Both felt equally bad." In total there are 3 possible pairings (``Proximal vs. Numerical", ``Proximal vs. Far", and ``Numerical vs. Far"), which are all between subject manipulations. Each participant only saw one trial.
 
-The Two-Trial-Position (TT-Pos) condition was similar to the ST-Pos condition, except that after characters picked their cards but before the winning card is revealed, participants make one set of emotion attributions and one forced-choice on who felt worse. Following this, the winning number 10 is revealed, and then participants make another set of attributions.
 
-In the Single-Trial-Number (ST-Num) condition, we changed the rules of the game. There were 19 blank cards, and a target card (circled in purple). Characters were assigned a blank card and had to guess what the number was behind the target card, writing their answers on their assigned blank card. Thus, in the Position conditions, the number of the goal was known (10) while the position was unknown, characters picked a position and were assigned a number (based on their choice); in this Number condition, the position of the goal was known, but the number was unknown, and characters were assigned a position and picked a number. Importantly, the visual description that participants saw is similar to the Position conditions. Thus, after characters wrote their guesses, the winning number behind the purple card is revealed (to be 10). Participants then attributed emotions to the two characters.
 
+In the Single-Step-Number (\textit{Num}) condition, we changed the rules of the game. There were 19 blank cards, and a target card (circled in purple). Characters were assigned a blank card and had to guess what the number was behind the target card, writing their answers on their assigned blank card. Thus, in the \textit{Pos} condition, the number of the goal was known (10) while the position was unknown, characters picked a position and were assigned a number (based on their choice); in this \textit{Num} condition, the position of the goal was known, but the number was unknown, and characters were assigned a position and picked a number. Importantly, the visual description that participants saw is similar to the Position conditions. Thus, after characters wrote their guesses, the winning number behind the purple card is revealed (to be 10). Participants then attributed emotions to the two characters, and made a forced-choice judgment about who felt worse.
+
+
+The Two-Step-Position (\textit{Two-Pos}) condition was similar to the \textit{Pos} condition, except that after characters picked their cards but \textit{before} the winning card is revealed, participants make one set of emotion attributions and one forced-choice on who felt worse. Following this, the winning number 10 is revealed, and then participants make another set of attributions. Hence, participants in this condition made two sets of attributions, one before the location of the winning card is revealed (\textit{Two-Pos-BeforeReveal}), and once after (\textit{Two-Pos-AfterReveal}).
 
 
 \subsubsection{Predictions.}
-We predicted that in the Single-Trial-Position condition, proximity would be judged to be a more relevant dimension of closeness than numerousity, and so the proximally-close character would be judged to feel worse than the numerically-close character, although the numerically-close character would, to a lesser extent, be judged to feel worse than the character who chose the numerically and proximally far card. In the Single-Trial-Number condition, on the other hand, proximity is irrelevant, and so we predicted that the numerically close character would be judged to feel the worst, and there would be no difference between the proximally close character and the far character.
+We predicted that in the \textit{Pos} condition, proximity would be judged to be a more relevant dimension of closeness than numerosity, and so the proximally-close character would be judged to feel worse than the numerically-close character, although the numerically-close character would, to a lesser extent, be judged to feel worse than the character who chose the numerically and proximally far card. In the \textit{Num} condition, on the other hand, proximity is irrelevant, and so we predicted that the numerically close character would be judged to feel the worst, and there would be no difference between the proximally close character and the far character.
 
-The Two-Trial-Position condition has an interesting twist. Prior to finding out the position of the winning card, position is still a more relevant dimension than numerosity, but not knowing the position of the winning card makes it impossible to judge closeness based on proximal distance. Observers should judge based on numerosity. At this point, there would be no difference between the proximally close and the far characters, and we predicted that the numerically close character will be judged to feel the worse of them all (similar to ST-Num). However, after finding out the position of the winning card, proximal closeness becomes much more relevant, and we expect to see the proximally close character being judged the worst (similar to ST-Pos).
+The \textit{Two-Pos} condition has an interesting twist. Prior to finding out the position of the winning card, position is still a more relevant dimension than numerosity because of the context, but participants do not yet know the position of the winning card, which makes it impossible to judge closeness based on proximal distance. In this attribution, observers should make judgements based on numerosity. There would also be no difference between the proximally close and the far characters, and we predicted that the numerically close character will be judged to feel the worse of them all (i.e., \textit{Two-Pos-BeforeReveal} results should be similar to \textit{Num}). However, after finding out the position of the winning card, proximal closeness becomes much more relevant, and we expect to see the proximally close character being judged the worst (\textit{Two-Pos-AfterReveal} results should be similar to \textit{Pos}).
 
 
 
 \begin{figure}[htb!]
 \includegraphics[width=\columnwidth]{images/cardCombined_forcedWorse.png}
-\caption{ Expt 2 Results. Proportions of forced choice response. Error bars indicate standard errors. Top row: Single-Trial-Position. 2nd row: Two-Trial-Position, after card is revealed. 3rd row: Two-Trial-Position, before card is revealed. Last row: Single-Trial-Number.}
+\caption{ Expt 2 Results. Proportions of forced choice response. Error bars indicate standard errors. Top row: \textit{Pos} condition. 2nd row: \textit{Num}. 3rd row: \textit{Two-Pos} condition, before card is revealed. Last row: \textit{Two-Pos} condition, after card is revealed. See text for details.}
 \label{Expt2ResultFig}
 \end{figure}
 
-\subsubsection{Results.}
+\subsubsection{Results.} Thirteen participants were excluded for failing the attention checks.
+First, let us consider the raw emotion attributions. In the \textit{Num} condition, as compared to the far character, the numerically close character was judged to feel more disappointed ($t(43)=2.81, p=.007$), more regret ($t(43)=2.44, p=.02$), more sadness ($t(43)=2.54, p=.015$) and less relief ($t(43)=2.12, p=.04$). For the \textit{Two-Pos-AfterReveal} attributions, the proximally-close character was judged to feel more disappointment ($t(31)=3.25, p=.003$), more regret ($t(31)=3.56, p=.001$), more sadness ($t(31)=2.76, p=.01$) and less happiness ($t(31)=2.67, p=.01$) compared to the numerically-close character. The proximally-close character was also judged to feel more disappointment ($t(33)=2.73, p=.01$), more regret ($t(33)=4.24, p=.0001$), more sadness ($t(33)=2.99, p=.005$), less happiness ($t(33)=2.49, p=.018$), and less relief ($t(33)=2.77, p=.009$) than the far character. All of these effects are in the predicted direction, but none of the other comparisons came out significant, suggesting that the near-miss effect might not be strong enough to be seen when comparing individual ratings of emotion.
 
-%%%% TODO XXX STATS
 
-Results for emotion attribution.
 
-The results for the forced-choice ratings are in Fig. \ref{Expt2ResultFig}. In line with our predictions, we find that in the ST-Pos and TT-Pos (after the card was revealed) conditions, the proximally-close character was judged to feel the worst (TODO XXX STATS), and to a much smaller extent, the numerically-close character was judged to feel worse than the far character (TODO XXX STATS). In contrast, in the ST-Num and TT-Pos (before the card was revealed) conditions, the numerically close character is judged to feel worst (TODO XXX STATS).
+
+The results for the forced-choice ratings are in Fig. \ref{Expt2ResultFig}. In line with our predictions, in the \textit{Pos} condition, the proximally-close character was judged to feel worse than the numerically-close character (bootstrapped simulation with 10,000 iterations on full sample, $p=.023$) and the far character (bootstrap $p=.0027$), and to a much smaller extent, the numerically-close character was judged to feel worse than the far character ($p=.016$). For the \textit{Two-Pos-AfterReveal} judgments, we find them to be qualitatively similar, in line with our predictions: the proximally-close character was judged to feel worse than the numerically-close character ($p=.0001$) and the far character (bootstrap $p=0$ as there were no observations for the far character feeling worse). The numerically-close character was not judged, however, to feel worse than the far character ($p=.41$).
+
+In contrast, we see the opposite pattern of results in the \textit{Num} and \textit{Two-Pos-BeforeReveal} attributions. In the \textit{Num} condition, the numerically close character is judged to feel worse than the proximally-close character (bootstrap $p=.0017$) and the far character ($p<.0001$). The is no difference between the proximally-close and far characters ($p=.17$). In the \textit{Two-Pos-BeforeReveal} attributions, the numerically-close character is judged to feel worse than the proximally-close character ($p=.004$) and the far character ($p=.0001$), while there is no difference between the proximally-close and far characters ($p=.13$).
+
+
+% TODO XXX Expt 2 results discussion
 
 
 \section{Experiment 3}
@@ -243,7 +263,7 @@ The results for the forced-choice ratings are in Fig. \ref{Expt2ResultFig}. In l
 \begin{figure}[htb!]
 \includegraphics[width=\columnwidth]{images/expt3Paradigm.png}
 %\includegraphics[width=\columnwidth]{images/Expt3Distribution.png}
-\caption{ Paradigm for the meta analysis reported in Expt 3. Participants attribute emotions to an agent after the outcome of a spin. After this spin, the agent won \$60 (as indicated by the black pointer), but almost won a lower amount. }% Bottom: Histogram of the normalized position the wheel landed within the sector in the dataset. }
+\caption{ Paradigm for the meta analysis reported in Expt 3. Participants attribute emotions to an agent after the outcome of a spin. After this spin, the agent won \$60 (as indicated by the black pointer), but almost won a lower amount. }
 \label{Expt3ParadigmFig}
 \end{figure}
 
@@ -261,40 +281,19 @@ which was a linear combination of \textit{win}, \textit{PE} and \textit{absPE}. 
 
 Next, we proceeded to define a near miss distance. We calculated a normalized ``distance from the edge" which ranged from 0 to 0.5, with 0 being the boundary edge and 0.5 indicating the exact center of the sector. We then took a reciprocal transform ($1/x$) to introduce a non-linearity that favors smaller distances, and finally multiplied the transformed distance with the difference in payment amounts from the current sector to the next nearer sector. This last component was to account for the difference in utility in the two payouts. Hence, we had:
 \begin{align}
-NM(X) &= \frac{1}{\text{distanceToEdge}(X)} * \Delta\text{Payoffs}(X) 
+NM(X) &= \frac{1}{\text{distanceToEdge}(X)} * \Delta\text{Payoffs}(X) \label{NMRegressor}
 \end{align}
 which we added to the model in Eqn. \ref{PEModel}. To illustrate, for the result shown in Fig. \ref{Expt3ParadigmFig}, the distance is approximately .05 (about 5\% of the sector size away from the \$25-\$60 boundary), and the $\Delta$Payoff is 60-25 = 35, as 25 is the next nearest sector.
 
 \subsubsection{Meta analysis results.}
 
-Model:
-Happy
-win = 4.046032e-02, t = 7.0800461
-PE = 3.574020e-02, t = 5.8587292
-absPE = -1.488921e-02, t = -2.8340726
-NM = -3.490640e-05, t = -2.7963737
+We fit a linear mixed-effects model with the amount won, PE, absPE, and the Near Miss (NM) term (Eqn. \ref{PEModel}, \ref{NMRegressor}) as fixed effects, and random intercepts by participant, wheel, and experiment. There is a significant slope on the NM term ($b = \text{-}3.5 * 10^{\text{-}5}, t(682)=\text{-}2.80, p=0.005$) on happiness. To understand the effect size of this term, let us consider the slope on win ($b = 0.0405, t(682) = 7.08, p<.0001$), PE ($b=0.036, t(682)=5.86, p<.0001$), and absPE ($b=\text{-}0.015, t(682) = \text{-}2.83, p=.005$) and the example in Figure \ref{Expt3ParadigmFig}. Not considering the near miss effect, and all else being equal, if the result had changed from \$60 to \$100, there will be an \textit{increase} in happiness due to $win$, $PE$ and $absPE$ of $40*(.0405+0.036+(\text{-}0.015)) = 2.46$ points on a 9 point Likert scale. In contrast, if we moved from the center of the \$60 sector to a distance of .01 (1\% of the sector size) away from the \$60/\$100 boundary, there would be a \textit{decrease} in happiness of $40*(1/0.5 - 1/0.01)*(\text{-}3.5 * 10^{\text{-}5}) = 0.137$ points on a 9 point scale. Thus, in this gambling scenario, the effect of a near miss on subjective happiness attributed is on the order of 5\% of the relative utility of winning the next higher amount. Getting a near miss on the \$60 wheel in Fig. \ref{Expt3ParadigmFig} and narrowly missing the sector \$100 (narrowly missing winning \$40 more) has a subjective cost equivalent to losing about \$2. This is a small effect relative to actually winning, yet it is  a large and not insignificant effect considering that this effect does not depend on changing actual payoffs, but relative closeness. Consider too, that this is a stylized game of chance, with fictional characters and hypothetical gambles, which all might lead to underestimating the size of the true effect in real-life situations like missing planes.
+
 
 \section{Discussion}
 
+Near-misses matter emotionally, and in this paper we sought to understand how people factor near-misses into lay theories of emotion. First, we showed that 
 
-
-%
-%In particular, there are 2 main questions that a model should answer:
-%How are different types of distances related?
-%
-%Missing a plane by 5 minutes versus 30 \cite{Kahneman1982}
-%
-%Missing a goal in soccer by 5 inches versus 30
-%
-%Entering a store just ahead of a person who won a prize for being the one-millionth customer \cite{Roese1997}
-%
-%A Ònear missÓ on a slot machine (e.g., Clark, Lawrence, Astley-Jones, \& Gray, 2009)
-%
-%In a game where one has to roll a 6 on a die to win, rolling a 5 versus rolling a 2 \cite{Kahneman1990}
-%
-%How do these distances factor (quantitatively) into our affective judgments?
-%
-%Here, I propose a model of a lay theory of counterfactual distance, a distance measure to the counterfactual world, and in particular, how counterfactual distance might factor into the affective judgments that human observers make about possible counterfactual worlds. These distances---temporal distance; physical distance; semantic distance in some mental representation space; etc---measure the separation between the current world and the counterfactual world being considered. The model proposes how observers consider these other possible worlds and details the affective impact that counterfactual distance has. 
 
 
 
