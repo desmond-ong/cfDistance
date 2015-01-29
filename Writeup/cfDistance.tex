@@ -55,8 +55,6 @@
 \begin{abstract}
 Observers often judge agents to be more unhappy when the agents miss a desired outcome by a small margin, compared to a large margin. This has been shown in situations where the agents have control over the outcome, such as in missing planes. Here, we show that intuitive theories of emotion incorporate near-misses even for events with randomly-determined outcomes, and this might be due in part to the illusion of control over random events. Finally, we integrate near-misses into a more general model of affective cognition, and quantify the psychological cost of a near-miss relative to winning and losing.
 
-% TODO: fix "situations whee the agents have control over their situation"
-
 %Near misses---missing a desired outcome by a small margin---are more emotionally intense than normal misses, even though the outcomes tend to be no different, and people readily accord near-miss effects when reasoning about others. Yet there are still open questions: what are the distance dimensions along which near misses are judged, and how do people incorporate near misses into more general affective cognition, or reasoning about emotion? In this paper we show that intuitive theories of emotion seem to weigh near-misses even for random events, and this is driven by the semblance of action-outcome contingency. Finally, we incorporate near misses into a more general model of affective cognition, and quantify the psychological cost of a near-miss relative to winning and losing.
 
 \textbf{Keywords:} 
@@ -172,7 +170,7 @@ The results for the forced-choice ratings are shown in Fig. \ref{Expt2ResultFig}
 By contrast, we see the opposite pattern of results in the \textit{Num} attributions. The close number character was judged to feel worse than the close distance character (bootstrap $p=.0017$) and the far character ($p<.0001$). There was no difference between the close distance and far characters ($p=.17$). 
 
 
-The results suggest that participants are sensitive to near-misses along multiple dimensions, in this case, both physical closeness and numerical closeness. When given multiple dimensions, participants weight the dimension on which the characters have more illusory control (physical closeness in the \textit{Pos} condition and numerical closeness in the \textit{Num} condition) more than the other dimension. When characters have to pick the physical location of the card, participants attribute more near-miss effects along physical closeness, and when characters have to choose a number (rather than a location), participants attribute more near-miss effects along numerical closeness. Again, it is interesting to reiterate that characters only have an illusion of control along these dimensions, but this illusion of control, much like actual control, affects participants' judgments of emotions.
+The results suggest that participants are sensitive to near-misses along multiple dimensions, in this case, both physical closeness and numerical closeness. When given multiple dimensions, participants weight the dimension on which the characters have more illusory control (physical closeness in the \textit{Pos} condition and numerical closeness in the \textit{Num} condition) more than the other dimension. When characters have to pick the physical location of the card, participants attribute more near-miss effects along physical closeness, and when characters have to choose a number (rather than a location), participants attribute more near-miss effects along numerical closeness. Again, it is worth reiterating that characters only have an illusion of control along these dimensions, yet this illusion of control, much like actual control, affects participants' judgments of emotions.
 
 
 
@@ -188,7 +186,7 @@ The results suggest that participants are sensitive to near-misses along multipl
 \subsubsection{Participants and procedures.}
 	690 participants were recruited across 3 different experiments previously reported in \citeA{OngAffCog}. The basic trial involves watching a character spin a wheel and win the amount on the wheel (Fig. \ref{Expt3ParadigmFig}). Participants then attributed 8 emotions (\textit{happy}, \textit{sad}, \textit{anger}, \textit{surprise}, \textit{disgust}, \textit{fear}, \textit{content} and \textit{disappointment}) to the character after the outcome on the wheel, using 9 point Likert scales. Each participant saw 10 trials, and the payoff and probability structure of the wheels were varied systematically to decorrelate the amount won with the expected value of the wheel. The first experiment only had these basic wheel trials: the second and third had these basic wheel trials intermixed with emotion attribution trials given other stimuli (faces and utterances) instead of wheels. We extracted data from the subset of wheel trials from the second and third experiment, and the entire first experiment, to amass a dataset of 3048 observations from 690 participants to conduct a meta-analysis on.
 	
-	These experiments were initially designed to test how different features of the situation, namely the amount won and the prediction error, affected participants' attribution of emotion to the character. Yet, because we randomized the position on which the spinner lands, these experiments incidentally provided a valuable dataset to test for a near-miss effect.
+	These experiments were initially designed to test how different features of the situation, namely the amount won and the prediction error, affected participants' attribution of emotion to the character. Yet, because we randomized the position on which the spinner lands, these experiments incidentally provided a valuable dataset to test for near-miss effects.
 
 \begin{figure}[htb!]
 \includegraphics[width=\columnwidth]{images/expt3Paradigm.png}
@@ -197,11 +195,11 @@ The results suggest that participants are sensitive to near-misses along multipl
 \end{figure}
 
 
-\subsubsection{Previous model.} The model we built in \citeA{OngAffCog} incorporated three important features: the amount won, the prediction error (PE), and the absolute value of the prediction error. That is, the emotion attributed to the agent after event X was:
+\subsubsection{Previous model.} The model we built in \citeA{OngAffCog} incorporated three important features: the amount won (\textit{win}), the prediction error (\textit{PE}), and the absolute value of the prediction error (\textit{absPE}). That is, the emotion E attributed to the agent after event X was:
 \begin{align}
 E(X) &= b_0 + b_1 \text{win}(X) + b_2 \text{PE}(X) + b_3 \text{absPE}(X) + \epsilon \label{PEModel}
 \end{align}
-which was a linear combination of \textit{win}, \textit{PE} and \textit{absPE}. The absolute value of the PE was added to test for nonlinear effects, namely, loss aversion, whereby agents will be more sensitive to negative PE values than to positive PE values. More discussion can be found in the paper. Eqn. \ref{PEModel} provided the starting point for the model in the following analysis.
+which was a linear combination of \textit{win}, \textit{PE} and \textit{absPE}. The absolute value of the PE was added to test for nonlinear effects, namely, loss aversion, whereby agents will be more sensitive to negative PE values and weigh them more than positive PE values. More discussion can be found in the paper. Eqn. \ref{PEModel} provided the starting point for the model in the following analysis.
 
 
 \subsubsection{Adding Near Miss to the model.}
