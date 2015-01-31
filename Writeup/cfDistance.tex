@@ -48,11 +48,21 @@
 \usepackage{amsmath}
 \usepackage{multirow}
 \usepackage{amssymb}
+%\usepackage{url}
+%\usepackage{hyperref}
+
+
  
 \definecolor{Red}{RGB}{255,0,0}
 \newcommand{\red}[1]{\textcolor{Red}{#1}}  
 
 %When does a near-miss sting?
+%When does close count?
+%When closeness counts: ...
+%I was so close!
+% He was soooo close! Near-misses hurt in random events
+
+% a near miss stings even when it's random and uncontrollable
 \title{ Near-misses hurt in games of chance \red{fixme}}
  
 \author{{\large \bf Desmond C. Ong (dco@stanford.edu)} \\
@@ -122,7 +132,7 @@ Near-Miss; Counterfactual Distance; Lay Theories; Emotion; Illusory Control
 
 \section{Experiment 1: Near-Miss effects in a random event}
 
-	In Experiment 1, we tested if participants would incorporate near-miss effects in their judgment of emotions when agents played a luck-based gamble. Importantly, we varied near-misses along numerical closeness, and because the outcomes from rolling dice are completely random, the agent demonstrably had no control over the outcome.
+	In Experiment 1\footnote{https://cocolab.stanford.edu/cogsci2015/nearmiss/expt1/}, we tested if participants would incorporate near-miss effects in their judgment of emotions when agents played a luck-based gamble. Importantly, we varied near-misses along numerical closeness, and because the outcomes from rolling dice are completely random, the agent demonstrably had no control over the outcome.
 %, and so the numerical closeness of the outcome compared to the desired outcome is not relevant. \red{NDG: i tweaked this \P, but should be adjusted based on how we clarify causal relevance in intro.}
 
 \subsubsection{Participants.} We recruited 150 participants through Amazon's Mechanical Turk.
@@ -158,7 +168,7 @@ Near-Miss; Counterfactual Distance; Lay Theories; Emotion; Illusory Control
 %\red{JZ: remove mention of distances}
 %We designed Experiment 2 to manipulate the illusion of control that agents have over different dimensions in a random game. Using a card guessing task, we manipulated agents' illusory control over either the positions of the cards or the numbers on the cards, and showed that observers incorporate stronger near-miss effects along the dimension with illusory control as compared to the dimension without. 
 
-We designed Experiment 2 to manipulate the illusion of control that agents have over different dimensions in a random game. Using a card guessing task, we manipulated the dimension (spatial position or numbers) along which agents made guesses in a random task, as well as the spatial or numerical distance by which they missed the desired outcome.  
+We designed Experiment 2\footnote{https://cocolab.stanford.edu/cogsci2015/nearmiss/expt2/Position, https://cocolab.stanford.edu/cogsci2015/nearmiss/expt2/Number} to manipulate the illusion of control that agents have over different dimensions in a random game. Using a card guessing task, we manipulated the dimension (spatial position or numbers) along which agents made guesses in a random task, as well as the spatial or numerical distance by which they missed the desired outcome.  
 
 %We reasoned that observers would imbue agents with more illusory control when that agent made a choice along a dimension.  For instance, an agent who chooses the location of a card might appear to have control over , even though in actuality the outcome is random and they have no such control.  If this is the case, then observers should believe that agents who miss a target by a small, as compared to random distance along a dimension they chose would feel worse.  By contrast, observers should infer no such near miss effect when agents choices were more clearly separate from the outcome (e.g., when an agent chooses a location and is subsequently numerically close or far from a target card). 
 
@@ -244,7 +254,7 @@ The results suggest that participants are sensitive to near-misses along multipl
 	Next, we performed a meta-analysis of three prior experiments that were designed to examine the features underlying affective cognition in a gambling paradigm. We explicitly model the near-miss effect in a quantitative model of affective cognition.
 	
 \subsubsection{Participants and procedures.}
-	690 participants were recruited across 3 different experiments previously reported in \citeA{OngAffCog}. The basic trial involves watching a character spin a wheel and win the amount on the wheel (Fig. \ref{Expt3ParadigmFig}). Participants then attributed 8 emotions (\textit{happy}, \textit{sad}, \textit{anger}, \textit{surprise}, \textit{disgust}, \textit{fear}, \textit{content} and \textit{disappointment}) to the character after the outcome on the wheel, using 9 point Likert scales. Each participant saw 10 trials, and the payoff and probability structure of the wheels were varied systematically to decorrelate the amount won with the expected value of the wheel. The first experiment only had these basic wheel trials: the second and third had these basic wheel trials intermixed with emotion attribution trials given other stimuli (faces and utterances) instead of wheels. We extracted data from the subset of wheel trials from the second and third experiment, and the entire first experiment, to amass a dataset of 3048 observations from 690 participants to conduct a meta-analysis on.
+	690 participants were recruited across 3 different experiments\footnote{\url{https://cocolab.stanford.edu/cogsci2015/nearmiss/metaAnalysis/}} previously reported in \citeA{OngAffCog}. The basic trial involves watching a character spin a wheel and win the amount on the wheel (Fig. \ref{Expt3ParadigmFig}). Participants then attributed 8 emotions (\textit{happy}, \textit{sad}, \textit{anger}, \textit{surprise}, \textit{disgust}, \textit{fear}, \textit{content} and \textit{disappointment}) to the character after the outcome on the wheel, using 9 point Likert scales. Each participant saw 10 trials, and the payoff and probability structure of the wheels were varied systematically to decorrelate the amount won with the expected value of the wheel. The first experiment only had these basic wheel trials: the second and third had these basic wheel trials intermixed with emotion attribution trials given other stimuli (faces and utterances) instead of wheels. We extracted data from the subset of wheel trials from the second and third experiment, and the entire first experiment, to amass a dataset of 3048 observations from 690 participants to conduct a meta-analysis on.
 	
 	These experiments were initially designed to test how different features of the situation, namely the amount won and the prediction error (the amount won relative to the expected value of the gamble), affected participants' attribution of emotion to the character. Yet, because we randomized the position on which the spinner lands, these experiments incidentally provided a valuable dataset to test for near-miss effects.
 
