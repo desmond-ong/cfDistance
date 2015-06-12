@@ -1,0 +1,637 @@
+<!-- Sets up templates for the actual "slides" and forms that are 
+supposed to be shown at each stage of the experiment. -->
+
+<html>
+<head>
+  <title>Start page</title>
+<script src="https://web.stanford.edu/~dco/common/jquery.min.js"></script>
+<script src="https://web.stanford.edu/~dco/common/mmturkey.0.5.js?nowarn"></script>
+<script src="https://web.stanford.edu/~dco/common/raphael.js"></script>
+<style type="text/css">
+.slide, #instructions, #wheel, #cardTableDiv {
+    min-width: 650px;
+}
+#story-text-p {
+    padding-left: 15%;
+    padding-right: 15%;
+    margin: 0 auto;
+    margin-top: 1em;
+    text-align: center;
+    font-size:24; 
+    line-height: 120%;
+}
+
+</style>
+<link rel="stylesheet" href="https://web.stanford.edu/~dco/common/style.css" />
+</head>
+<body>
+<div class="progress" id="progressBar">
+	<div class="bar-wrapper">
+	  <div class="bar"></div>
+	</div>
+	<p>Progress bar: <span id="trial-num">{{}}</span><span>/</span><span id="total-num">{{}}</span></p>
+</div>
+
+<div class="slide" id="instructions">
+  <img src="https://web.stanford.edu/~dco/common/images/stanford.png" alt="Stanford University">
+    <p id='logo-text'>Stanford Computation and Cognition Lab</p>
+  <p class="block-text">
+  In this experiment, we are interested in how
+  people read stories and make judgments about emotions.
+  </p>
+  <button type="button" onclick="this.blur(); experiment.description()">Start</button>
+    <p class="block-text" id="legal">Legal information: By answering the
+    following questions, you are participating in a study being performed by
+    cognitive scientists in the Stanford Department of Psychology. If you have
+    questions about this research, please contact <b>Desmond Ong</b> at <a
+    href="mailto://desmond.ong@stanford.edu">desmond.ong@stanford.edu</a> or Noah
+    Goodman, at ngoodman@stanford.edu. You must be  at least 18 years old to
+    participate. Your participation in this research is voluntary. You may
+    decline to answer any or all of the following questions. You may decline
+    further participation, at any time, without adverse consequences. Your
+    anonymity is assured; the researchers who have requested your
+    participation will not receive any personal information about you.
+    </p>
+
+</div>
+
+<script LANGUAGE="JavaScript">
+<!--
+function ValidateForm(form){
+    var valid = 0;
+    for(var i = 0; i < form.elements.length; i++) {
+        if (form.elements[i].checked == true ) { 
+            valid = 1; 
+            return true;
+        } 
+    } 
+    if (valid == 0) {
+        alert ( "Please answer this question." );
+        return false; 
+    }
+}
+
+function ValidateCorrect(form){
+    if (form.elements[0].checked == true ) { 
+        return true;
+    } 
+	alert ( "Please make sure you understood the question correctly!" );
+    return false; 
+}
+
+function ValidateCausal(form) {
+	var valid = false;
+	var checkedRadioIndex = -1;
+	var checkedTextIndex = -1;
+    for(var i = 0; i < form.elements.length - 1; i++) {
+        if (form.elements[i].checked == true && form.elements[i+1].value != "") { 
+        	valid = true;
+        	checkedRadioIndex = i;
+        	checkedTextIndex = i+1;
+    	}
+    }
+    
+    if (!valid) {
+    	alert ( "Please select an option and fill in the blank with the appropriate response. Please fill in only the textbox of the option you selected." );
+   	}
+   	return valid; 
+}
+
+function ValidateSelect(form) {
+    if (form.ageRange.selectedIndex != 0 && form.ageRange.selectedIndex != 1 && form.ageRange.selectedIndex != 2 && form.ageRange.selectedIndex != 3 && form.ageRange.selectedIndex != 4 && form.ageRange.selectedIndex != 5 && form.ageRange.selectedIndex != 6) {
+        alert ( "Please answer this question." );
+        return false;
+    }
+    return true; 
+}
+
+
+function ValidateNumber(field)
+{
+    valid = true;
+    if (field.value == "")
+    {
+        alert ("Please answer all the questions.");
+        valid = false;
+    }
+    if (field.value < 0 || field.value > 10) {
+    	alert ("Please answer between 0 and 10.");
+    	valid = false;
+    }
+    if (isNaN(field.value)) {
+        alert ("Please answer using only numbers.");
+        valid = false;
+    }
+    return valid;
+
+}
+
+function checkPreview() {
+    if (turk.previewMode) {
+        alert ("Please accept this HIT to see more questions.");
+        return false;
+    }
+    return true;
+}
+
+function ValidateText(field)
+{
+    valid = true;
+
+    if (field.value == "" )
+    {
+        alert ("Please answer all the questions.");
+        valid = false;
+    }
+
+    return valid;
+}
+
+/*
+function pressEnter(e) {
+    if (e.keyCode == 13) {
+    	document.rating.next.click();
+    	return false;
+    }
+}
+*/
+
+
+function ValidateFreeResponse() {
+    
+    if ($('#freeResponseInput').val().length > 50)
+    //if ($('#freeResponseInput').val()!=null)
+    {
+        return true;
+    } else {
+        alert ( "Please provide more details." );
+        //alert ( "Please answer the question." );
+        return false;    
+    }
+}
+
+function ValidateDemographicForm() {
+    if ($('input[name="genderButton"]:checked').val()!=null &&
+        $('#ageRange').val()!=null &&
+        $('input[name="nativeLanguage"]').val()!=null) {
+        return true;
+    } else {
+        alert ( "Please answer all the questions." );
+        return false;    
+    }
+}
+
+function ValidateSanityCheck() {
+    if ($('input[name="example1Button"]:checked').val()=="correct") {
+        return true;
+    } else if($('input[name="example1Button"]:checked').val()=="wrong") {
+        alert ( "No, that's not the correct sequence of events." );
+        experiment.sanityCheckCorrect = experiment.sanityCheckCorrect - 1; 
+        return false;    
+    } else {
+        alert ( "Please answer all the questions." );
+        return false;    
+    }
+}
+
+function ValidateRadioButtons() {
+    
+    if ($('input[name="happy1"]:checked').val()!=null &&
+        $('input[name="sad1"]:checked').val()!=null &&
+        $('input[name="relief1"]:checked').val()!=null &&
+        $('input[name="regret1"]:checked').val()!=null &&
+        $('input[name="contentment1"]:checked').val()!=null &&
+        $('input[name="disappointment1"]:checked').val()!=null &&
+        $('input[name="closeness1"]:checked').val()!=null &&
+        $('input[name="happy2"]:checked').val()!=null &&
+        $('input[name="sad2"]:checked').val()!=null &&
+        $('input[name="relief2"]:checked').val()!=null &&
+        $('input[name="regret2"]:checked').val()!=null &&
+        $('input[name="contentment2"]:checked').val()!=null &&
+        $('input[name="disappointment2"]:checked').val()!=null &&
+        $('input[name="closeness2"]:checked').val()!=null &&
+        $('#attentionCheck1').val()!='' && 
+        $('#attentionCheck2').val()!=''
+        //&&
+        // $('input[name="positiveOutcomeUtilityQ"]:checked').val()!=null &&
+        // $('input[name="negativeOutcomeUtilityQ"]:checked').val()!=null
+        ) {
+        return true;
+    } else {
+        alert ( "Please answer all the questions." );
+        return false;    
+    }
+}
+
+function Validate3AFC() {
+    
+    if ($('input[name="3AFCWorse"]:checked').val()!=null
+        //&&
+        // $('input[name="positiveOutcomeUtilityQ"]:checked').val()!=null &&
+        // $('input[name="negativeOutcomeUtilityQ"]:checked').val()!=null
+        ) {
+        return true;
+    } else {
+        alert ( "Please answer all the questions." );
+        return false;    
+    }
+}
+
+
+</script>
+
+
+<div class="slide" id="description">
+<p id='logo-text'>Instructions</p>
+<p class="block-text"> We are interested in how people understand other people's emotions. </p>
+<p class="block-text"> You will read just <span id="tot-num">{{}}</span> story and asked to rate the emotions of the people in the story. For each of the pairs of people in the story, imagine that they are all playing games for prizes.</p>
+
+
+<div id="form">
+<button type="button" onclick="this.blur(); experiment.next()">Let's Start!</button>
+</div>
+</div>
+
+
+<div class="slide" id="stage">
+
+    <div id="response">
+        <p id="question">
+            <span id="CharName1a">{{}}</span> and <span id="CharName2a">{{}}</span> are playing a card game. There are cards numbered 1 through 20, face-down on the table (shown below). The person that picks the number 10 will win a pot of $10,000. Each of them can only pick one card.
+        </p>
+        
+        <center>
+        <div id="cardTableDiv" style="margin:auto; width:650; height:650;">
+        </div>
+        </center>
+
+        <center>
+        <button type="button" id="showFirstDraw" onclick="this.blur(); $('#showFirstDraw').hide(); $('#drawResultsDiv').show(); experiment.drawTwoCards(); ">I understand</button>
+        </center>
+
+        <div id="drawResultsDiv">
+            <center>
+                <p class="block-text"> The goal is to pick the card 10.
+                    <br><br>
+                <span id="resultsSpan"></span>
+                <br><br>Neither of them won. 
+                </p>
+
+                <br><br>
+                <button type="button" id="finishFirstDraw" onclick="this.blur(); $('#finishFirstDraw').hide(); experiment.revealWinningCard(); $('#winningResultDiv').show(); $('#emotionResponseDiv1').show();">Ok</button>
+            </center>
+        </div>
+
+        <div id="winningResultDiv">
+            <p class="block-text">The winning card (number 10) is revealed. It is circled in purple. <br><br>
+                <!-- We will be asking you again about how <span id="CharName1e">{{}}</span> (who picked the <span id="numberChar1"></span> card outlined in <span id="colorChar1"></span>) and <span id="CharName2e">{{}}</span> (who picked the <span id="numberChar2"></span> card outlined in <span id="colorChar2"></span>) feel.</p> -->
+        <hr>
+        </div>
+    
+
+
+        <div id="emotionResponseDiv1">
+            <div id="form">
+            
+            <h3> The following questions are about <span id="CharName1b">{{}}</span> </h3>
+            <p id="question">
+                For <span id="CharName1f">{{}}</span>: <span id="outcome1span"></span>
+            </p>
+                <input type="text" id="attentionCheck1" /><br />
+             
+            <br>
+            <p id="question">
+                How do you think <span id="CharName1c">{{}}</span> feels? Please guess how strongly he feels for each of the following emotions:
+            </p>
+            
+            <form name="happy1form">
+            &nbsp; Happiness: &nbsp; &nbsp; 
+                <span id="happinessResponse">
+                    Not at all
+                        <input type="radio" name="happy1" value="1" />  
+                        <input type="radio" name="happy1" value="2" />  
+                        <input type="radio" name="happy1" value="3" />  
+                        <input type="radio" name="happy1" value="4" />  
+                        <input type="radio" name="happy1" value="5" />  
+                        <input type="radio" name="happy1" value="6" />  
+                        <input type="radio" name="happy1" value="7" />  
+                        <input type="radio" name="happy1" value="8" />  
+                        <input type="radio" name="happy1" value="9" />  
+                    Extremely
+                </span>
+            </form>
+                   
+            <form name="sad1form">
+            &nbsp; &nbsp; &nbsp; Sadness: &nbsp; &nbsp; &nbsp;
+                <span id="sadnessResponse">
+                    Not at all
+                        <input type="radio" name="sad1" value="1" />  
+                        <input type="radio" name="sad1" value="2" />  
+                        <input type="radio" name="sad1" value="3" />  
+                        <input type="radio" name="sad1" value="4" />  
+                        <input type="radio" name="sad1" value="5" />  
+                        <input type="radio" name="sad1" value="6" />  
+                        <input type="radio" name="sad1" value="7" />  
+                        <input type="radio" name="sad1" value="8" />  
+                        <input type="radio" name="sad1" value="9" />  
+                    Extremely
+                </span>
+            </form>
+
+            
+            <form name="relief1form">
+            &nbsp; &nbsp; &nbsp; &nbsp;  Relief: &nbsp; &nbsp; &nbsp; &nbsp; 
+                <span id="reliefResponse">
+                    Not at all
+                        <input type="radio" name="relief1" value="1" />  
+                        <input type="radio" name="relief1" value="2" />  
+                        <input type="radio" name="relief1" value="3" />  
+                        <input type="radio" name="relief1" value="4" />  
+                        <input type="radio" name="relief1" value="5" />  
+                        <input type="radio" name="relief1" value="6" />  
+                        <input type="radio" name="relief1" value="7" />
+                        <input type="radio" name="relief1" value="8" />  
+                        <input type="radio" name="relief1" value="9" />    
+                    Extremely
+                </span>
+            </form>
+            <br>
+            <form name="regret1form">
+            &nbsp; &nbsp; &nbsp; &nbsp;  Regret: &nbsp; &nbsp; &nbsp;
+                <span id="regretResponse">
+                    Not at all
+                        <input type="radio" name="regret1" value="1" />  
+                        <input type="radio" name="regret1" value="2" />  
+                        <input type="radio" name="regret1" value="3" />  
+                        <input type="radio" name="regret1" value="4" />  
+                        <input type="radio" name="regret1" value="5" />  
+                        <input type="radio" name="regret1" value="6" />  
+                        <input type="radio" name="regret1" value="7" />
+                        <input type="radio" name="regret1" value="8" />  
+                        <input type="radio" name="regret1" value="9" />    
+                    Extremely
+                </span>
+            </form>
+            
+            <form name="contentment1form">
+            Contentment: &nbsp;
+                <span id="contentmentResponse">
+                    Not at all
+                        <input type="radio" name="contentment1" value="1" />  
+                        <input type="radio" name="contentment1" value="2" />  
+                        <input type="radio" name="contentment1" value="3" />  
+                        <input type="radio" name="contentment1" value="4" />  
+                        <input type="radio" name="contentment1" value="5" />  
+                        <input type="radio" name="contentment1" value="6" />  
+                        <input type="radio" name="contentment1" value="7" />
+                        <input type="radio" name="contentment1" value="8" />  
+                        <input type="radio" name="contentment1" value="9" />    
+                    Extremely
+                </span>
+            </form>
+            
+            <form name="disappointment1form">
+            Disappointment:
+                <span id="disappointmentResponse">
+                    Not at all
+                        <input type="radio" name="disappointment1" value="1" />  
+                        <input type="radio" name="disappointment1" value="2" />  
+                        <input type="radio" name="disappointment1" value="3" />  
+                        <input type="radio" name="disappointment1" value="4" />  
+                        <input type="radio" name="disappointment1" value="5" />  
+                        <input type="radio" name="disappointment1" value="6" />  
+                        <input type="radio" name="disappointment1" value="7" /> 
+                        <input type="radio" name="disappointment1" value="8" />  
+                        <input type="radio" name="disappointment1" value="9" />   
+                    Extremely &nbsp; &nbsp;
+                </span>
+            </form>
+
+            <p id="question">
+                How close do you think <span id="CharName1i">{{}}</span> came to winning?
+            </p>
+             <form name="closenessForm">
+            &nbsp; &nbsp; &nbsp; &nbsp; Closeness: &nbsp; &nbsp; 
+                <span id="closenessResponse">
+                    Not at all 
+                        <input type="radio" name="closeness1" value="1" />  
+                        <input type="radio" name="closeness1" value="2" />  
+                        <input type="radio" name="closeness1" value="3" />  
+                        <input type="radio" name="closeness1" value="4" />  
+                        <input type="radio" name="closeness1" value="5" />  
+                        <input type="radio" name="closeness1" value="6" />  
+                        <input type="radio" name="closeness1" value="7" /> 
+                        <input type="radio" name="closeness1" value="8" />  
+                        <input type="radio" name="closeness1" value="9" />   
+                    Extremely &nbsp; &nbsp;
+                </span>
+            </form>
+
+
+
+            <hr>
+
+            <h3> Now, the following questions are about <span id="CharName2b">{{}}</span> </h3>
+
+            <p id="question">
+                For <span id="CharName2f">{{}}</span>: <span id="outcome2span"></span>
+            </p>
+                <input type="text" id="attentionCheck2" /><br />
+
+            <p id="question">
+                How do you think <span id="CharName2c">{{}}</span> feels? Please guess how strongly he feels for each of the following emotions:
+            </p>
+            
+            <form name="happy2form">
+            &nbsp; Happiness: &nbsp; &nbsp; 
+                <span id="happinessResponse">
+                    Not at all
+                        <input type="radio" name="happy2" value="1" />  
+                        <input type="radio" name="happy2" value="2" />  
+                        <input type="radio" name="happy2" value="3" />  
+                        <input type="radio" name="happy2" value="4" />  
+                        <input type="radio" name="happy2" value="5" />  
+                        <input type="radio" name="happy2" value="6" />  
+                        <input type="radio" name="happy2" value="7" />  
+                        <input type="radio" name="happy2" value="8" />  
+                        <input type="radio" name="happy2" value="9" />  
+                    Extremely
+                </span>
+            </form>
+                   
+            <form name="sad2form">
+            &nbsp; &nbsp; &nbsp; Sadness: &nbsp; &nbsp; &nbsp;
+                <span id="sadnessResponse">
+                    Not at all
+                        <input type="radio" name="sad2" value="1" />  
+                        <input type="radio" name="sad2" value="2" />  
+                        <input type="radio" name="sad2" value="3" />  
+                        <input type="radio" name="sad2" value="4" />  
+                        <input type="radio" name="sad2" value="5" />  
+                        <input type="radio" name="sad2" value="6" />  
+                        <input type="radio" name="sad2" value="7" />  
+                        <input type="radio" name="sad2" value="8" />  
+                        <input type="radio" name="sad2" value="9" />  
+                    Extremely
+                </span>
+            </form>
+            
+            
+            <form name="relief2form">
+            &nbsp; &nbsp; &nbsp; &nbsp;  Relief: &nbsp; &nbsp; &nbsp; &nbsp; 
+                <span id="reliefResponse">
+                    Not at all
+                        <input type="radio" name="relief2" value="1" />  
+                        <input type="radio" name="relief2" value="2" />  
+                        <input type="radio" name="relief2" value="3" />  
+                        <input type="radio" name="relief2" value="4" />  
+                        <input type="radio" name="relief2" value="5" />  
+                        <input type="radio" name="relief2" value="6" />  
+                        <input type="radio" name="relief2" value="7" />
+                        <input type="radio" name="relief2" value="8" />  
+                        <input type="radio" name="relief2" value="9" />    
+                    Extremely
+                </span>
+            </form>
+            <br>
+            <form name="regret2form">
+            &nbsp; &nbsp; &nbsp; &nbsp;  Regret: &nbsp; &nbsp; &nbsp;
+                <span id="regretResponse">
+                    Not at all
+                        <input type="radio" name="regret2" value="1" />  
+                        <input type="radio" name="regret2" value="2" />  
+                        <input type="radio" name="regret2" value="3" />  
+                        <input type="radio" name="regret2" value="4" />  
+                        <input type="radio" name="regret2" value="5" />  
+                        <input type="radio" name="regret2" value="6" />  
+                        <input type="radio" name="regret2" value="7" />
+                        <input type="radio" name="regret2" value="8" />  
+                        <input type="radio" name="regret2" value="9" />    
+                    Extremely
+                </span>
+            </form>
+            
+            <form name="contentment2form">
+            Contentment: &nbsp;
+                <span id="contentmentResponse">
+                    Not at all
+                        <input type="radio" name="contentment2" value="1" />  
+                        <input type="radio" name="contentment2" value="2" />  
+                        <input type="radio" name="contentment2" value="3" />  
+                        <input type="radio" name="contentment2" value="4" />  
+                        <input type="radio" name="contentment2" value="5" />  
+                        <input type="radio" name="contentment2" value="6" />  
+                        <input type="radio" name="contentment2" value="7" />
+                        <input type="radio" name="contentment2" value="8" />  
+                        <input type="radio" name="contentment2" value="9" />    
+                    Extremely
+                </span>
+            </form>
+            
+            <form name="disappointment2form">
+            Disappointment:
+                <span id="disappointmentResponse">
+                    Not at all
+                        <input type="radio" name="disappointment2" value="1" />  
+                        <input type="radio" name="disappointment2" value="2" />  
+                        <input type="radio" name="disappointment2" value="3" />  
+                        <input type="radio" name="disappointment2" value="4" />  
+                        <input type="radio" name="disappointment2" value="5" />  
+                        <input type="radio" name="disappointment2" value="6" />  
+                        <input type="radio" name="disappointment2" value="7" /> 
+                        <input type="radio" name="disappointment2" value="8" />  
+                        <input type="radio" name="disappointment2" value="9" />   
+                    Extremely &nbsp; &nbsp;
+                </span>
+            </form>
+
+            <p id="question">
+                How close do you think <span id="CharName2i">{{}}</span> came to winning?
+            </p>
+             <form name="closenessForm">
+            &nbsp; &nbsp; &nbsp; &nbsp; Closeness: &nbsp; &nbsp; 
+                <span id="closenessResponse">
+                    Not at all 
+                        <input type="radio" name="closeness2" value="1" />  
+                        <input type="radio" name="closeness2" value="2" />  
+                        <input type="radio" name="closeness2" value="3" />  
+                        <input type="radio" name="closeness2" value="4" />  
+                        <input type="radio" name="closeness2" value="5" />  
+                        <input type="radio" name="closeness2" value="6" />  
+                        <input type="radio" name="closeness2" value="7" /> 
+                        <input type="radio" name="closeness2" value="8" />  
+                        <input type="radio" name="closeness2" value="9" />   
+                    Extremely &nbsp; &nbsp;
+                </span>
+            </form>
+
+            <button type="button" id="next" onclick="this.blur(); if (ValidateRadioButtons()) {$('#emotionResponseDiv1').hide(); $('#3AFCResponseDiv').show();}">Next</button>
+            </div>
+            </div>
+
+            <div id="3AFCResponseDiv">
+            <center>
+            Who feels worse?<br>
+            <input type="radio" name="3AFCWorse" value="1" />  <span id="CharName1d">{{}}</span> <br>
+            <input type="radio" name="3AFCWorse" value="2" />  <span id="CharName2d">{{}}</span> <br>
+            <input type="radio" name="3AFCWorse" value="3" />  Both feel equally bad
+            <br>
+            <br>
+            Why?
+            <form name="freeResponseForm">
+            <textarea name="freeResponseInput" id="freeResponseInput" ROWS=10 COLS=70></textarea>
+            </form>
+
+            <br>
+            <button type="button" id="next" onclick="this.blur(); if (Validate3AFC()) {experiment.next();}">Next</button>
+            </center>
+            </div>
+            
+        
+    </div>
+</div>
+
+
+<div class="slide" id="askInfo">
+    
+    <div id="form">
+    
+    <p id="infoQ">Please answer a few questions about yourself. </p>
+    <form name="gender">
+    </br>
+    <span id="infoQ">What is your gender?</span>&nbsp;&nbsp;
+    <input type="radio" name="genderButton" value="M" /><span id="opt">Male</span>&nbsp;&nbsp;
+    <input type="radio" name="genderButton" value="F" /><span id="opt">Female</span>
+    </form>
+    
+    <span id="infoQ">What is your age?</span>&nbsp;&nbsp;
+    <input type="text" id="ageRange" /><br />
+    
+    <form name="language">
+    <span id="infoQ"> What is your native language? </span>&nbsp;&nbsp;
+    <input type="text" name="nativeLanguage" /><br />
+    </form>
+    <form name="comments">
+    </br>
+    </br>
+    
+    <span id="infoQ"> (Optional) Please leave any comments or suggestions regarding this HIT:</span></br>
+    <TEXTAREA name="commentsTextArea" ROWS=10 COLS=50></TEXTAREA>
+    </br>
+    </form>
+    <!--
+    <button type="button" onclick="this.blur(); experiment.end();">Submit</button>
+    -->
+    <button type="button" onclick="this.blur(); if (ValidateDemographicForm()) {experiment.end();}">Submit</button>
+    
+
+    </div>
+</div>
+
+<div class="slide" id="finished">
+  You're finished - thanks for participating! Submitting to Mechanical Turk...
+</div>
+
+<script src="experiment.js"></script>
+</body>
+</html>
