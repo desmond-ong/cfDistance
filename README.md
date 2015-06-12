@@ -26,7 +26,7 @@ The file contains all the R code necessary to replicate the analyses reported in
 
 ### Sample Experiments
 
-A sample of our experiments is also included in the repository. I
+A sample of our experiments is also included in the repository.
 
 If you do finish an experiment, you'll also see a mockup of the data that would've been collected, had it been running live. The complete experiments can be loaded using the following links:
 
