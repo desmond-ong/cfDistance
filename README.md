@@ -12,6 +12,9 @@ This repository is maintained by Desmond Ong. Questions, comments, requests for 
 #### Note:
 The meta-analysis reported in the non-archival version of this CogSci paper was added into a revised version of Ong, Zaki, & Goodman, which is currently under review. This revision was made after the CogSci paper was accepted. The data and analysis code for that paper can be found at github.com/desmond-ong/affCog
 
+
+
+
 ### Data
 
 The data for the first 2 experiments presented in the paper are in the /data folder.
@@ -23,6 +26,11 @@ Analysis code is provided in nearMiss_analysis.Rmd (a R Markdown document).
 
 The file contains all the R code necessary to replicate the analyses reported in the paper (excluding the meta-analysis, which can be found at github.com/desmond-ong/affCog)
 
+### Paper
+
+See
+https://rawgit.com/desmond-ong/near-miss/master/nearMiss_analysis.html
+for the output of our analysis code, side-by-side with the paper.
 
 ### Sample Experiments
 
