@@ -3,7 +3,7 @@
 
 This repository contains materials for the following paper:
 
-Ong, D. C., Goodman, N. D., & Zaki, J. (2015). Near-misses sting even when they are uncontrollable. *Proceedings of the 37th Annual Meeting of the Cognitive Science Society*.
+Ong, D. C., Goodman, N. D., & Zaki, J. (2015). Near-misses sting even when they are uncontrollable. *Proceedings of the 37th Annual Meeting of the Cognitive Science Society*, 1775-1780. 
 
 
 This repository is maintained by Desmond Ong. Questions, comments, requests for clarification or replication, etc, should be directed to desmond (dot) ong (at) stanford (dot) edu
